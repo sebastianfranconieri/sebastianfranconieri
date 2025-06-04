@@ -188,3 +188,12 @@ footer {
   }
 }
 
+@font-face {
+  font-family: 'MonumentExtended-Regular';
+  src: url('../fonts/MonumentExtended-Regular.ttf') format('truetype');
+}
+
+.mi-texto {
+  font-family: 'MonumentExtended-Regular', sans-serif;
+}
+
