@@ -205,3 +205,6 @@ footer {
   font-family: 'MonumentExtended-Regular', sans-serif;
 }
 
+.negrita {
+  text-transform: uppercase;
+}
