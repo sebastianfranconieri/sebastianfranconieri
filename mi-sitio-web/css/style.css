@@ -38,14 +38,22 @@ footer {
   padding: 10px;
 }
 
+/* Quita márgenes del body para que el BANNER toque los bordes */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner responsivo que ocupa toda la pantalla y toca los bordes */
 .banner {
   width: 100vw;
   height: 100vh;
-  background-image: url('../images/banner.jpg');
+  background-image: url('../images/banner.jpg'); /* Cambia la ruta si está en otra carpeta */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
 
 @font-face {
   font-family: 'Avenir';
@@ -55,7 +63,7 @@ body {
   font-family: 'Avenir', sans-serif;
 }
 
-/* --- RESET BÁSICO --- */
+
 * {
   margin: 0;
   padding: 0;
