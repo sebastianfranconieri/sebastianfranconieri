@@ -256,23 +256,23 @@ footer {
 /* Imagenes horizontales tipo banner en la sección About */
 .about-main .vertical-images {
   display: flex;
-  justify-content: center;  /* centra horizontalmente el contenedor */
-  width: 100%;              /* ocupa todo el ancho del contenedor padre */
+  justify-content: center;
+  width: 100%;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  height: 400px;  /* Set the height you want the images to be */
 }
 
 .about-main .vertical-images img {
-  flex: 1 1 auto;           /* cada imagen crece igual y ocupa 1/3 del contenedor */
-  max-width: 33.3333%;      /* ancho máximo para que no crezca más */
-  height: auto;             /* altura automática para respetar proporción */
-  object-fit: cover;        /* cubre sin deformar */
+  flex: 1 1 auto;
+  max-width: 33.3333%;
+  height: 100%;  /* Make images take full container height */
+  object-fit: cover;
   display: block;
   margin: 0;
   padding: 0;
 }
-
 
 
 /* Links sin color ni subrrayado */
