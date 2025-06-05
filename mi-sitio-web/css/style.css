@@ -21,12 +21,15 @@ header {
   padding: 20px 1rem;
   text-align: center;
   border-bottom: none; /* Quitar línea negra */
+  border: none !important;
+  box-shadow: none !important;
 }
 
 header h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
 }
+
 
 /* Navegación */
 nav ul {
@@ -61,6 +64,9 @@ main {
   padding: 0px;            /* sin padding para que la imagen toque los bordes */
   text-align: center;
   overflow: hidden;      /* evita scroll horizontal si algo se desborda */
+  margin-top: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
 }
 
 /* Imagen banner horizontal que toca bordes laterales */
