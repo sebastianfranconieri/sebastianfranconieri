@@ -235,3 +235,20 @@ footer {
   margin: 0;
   padding: 0;
 }
+
+/* Imagenes veritcales About */
+.about-main .vertical-images {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem; /* espacio debajo de las imágenes */
+}
+
+.about-main .vertical-images img {
+  width: 100%;            /* o fijá un ancho como 600px */
+  max-width: 600px;       /* para que no se pasen de ancho */
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
