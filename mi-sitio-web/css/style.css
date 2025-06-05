@@ -233,5 +233,5 @@ footer {
 
 /* Espacio de parrafos */
 p {
-  margin-bottom: 1em; /* espacio debajo de cada párrafo */
+  margin-bottom: 10px; /* espacio debajo de cada párrafo */
 }
