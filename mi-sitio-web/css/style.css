@@ -1,34 +1,26 @@
-/* --- RESET GENERAL --- */
+/* Reset general */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* --- TIPOGRAFÍA BASE --- */
-@font-face {
-  font-family: 'Avenir';
-  src: url('../fonts/Avenir.ttf');
-}
-@font-face {
-  font-family: 'MonumentExtended-Regular';
-  src: url('../fonts/MonumentExtended-Regular.ttf') format('truetype');
-}
-
+/* Body y tipografía general */
 body {
   font-family: 'Avenir', sans-serif;
   line-height: 1.6;
-  color: #333333;
-  background-color: #ffffff;
+  color: #333;
+  background-color: #fff;
+  padding: 0 1rem;
   margin: 0;
-  padding: 0;
 }
 
-/* --- HEADER --- */
+/* Header */
 header {
   background-color: white;
-  padding: 1.5rem 1rem;
+  padding: 20px 1rem;
   text-align: center;
+  border-bottom: none; /* Quitar línea negra */
 }
 
 header h1 {
@@ -36,7 +28,7 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
-/* --- NAVEGACIÓN --- */
+/* Navegación */
 nav ul {
   list-style: none;
   display: flex;
@@ -48,11 +40,12 @@ nav ul {
 
 nav ul li {
   display: inline-block;
+  margin: 0 15px;
 }
 
 nav ul li a {
   text-decoration: none;
-  color: #333333;
+  color: #333;
   font-weight: 600;
   font-size: 1rem;
 }
@@ -61,50 +54,88 @@ nav ul li a:hover {
   color: #0077cc;
 }
 
-/* --- MAIN --- */
+/* Main */
 main {
   max-width: 960px;
   margin: 2rem auto;
   text-align: center;
-  padding: 0;
+  padding: 0; /* quitar padding para que la imagen toque bordes */
 }
 
-/* --- BANNER (usa <div class="banner"></div> en HTML) --- */
-.banner {
-  width: 100vw;
-  height: 100vh;
-  background-image: url('../images/banner.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* --- IMÁGENES --- */
-img {
-  max-width: 100%;
+/* Imagen banner horizontal que toca bordes laterales */
+.hero-img {
+  width: 100vw; /* ancho completo de viewport para tocar bordes */
   height: auto;
+  max-height: 60vh; /* altura responsiva para que quede horizontal */
+  object-fit: cover; /* recorta sin deformar */
   display: block;
-  margin: 0 auto;
+  margin-left: calc(-1 * 1rem); /* compensa padding del body */
+  margin-right: calc(-1 * 1rem); /* compensa padding del body */
 }
 
-/* --- VIDEO --- */
-video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 1rem auto;
-}
-
-/* --- FOOTER --- */
+/* Footer */
 footer {
   background-color: white;
   text-align: left;
-  padding: 20px;
+  padding: 0;
   font-size: 0.9rem;
   margin-top: 3rem;
 }
 
-/* --- TIPOGRAFÍA PERSONALIZADA --- */
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+  
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+  
+  main {
+    margin: 1rem;
+  }
+  
+  .hero-img {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  main {
+    margin: 0.5rem;
+  }
+  
+  .hero-img {
+    max-height: 30vh;
+  }
+}
+
+/* Fuentes personalizadas */
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir.ttf');
+}
+
+@font-face {
+  font-family: 'MonumentExtended-Regular';
+  src: url('../fonts/MonumentExtended-Regular.ttf') format('truetype');
+}
+
+/* Clases de texto */
 .mi-texto {
   font-family: 'MonumentExtended-Regular', sans-serif;
 }
@@ -115,107 +146,4 @@ footer {
 
 .negrita {
   text-transform: uppercase;
-}
-
-/* --- HERO FULLSCREEN CON <img> --- */
-.hero-container {
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
-}
-
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* --- HEADER FLEX (opcional si usás .site-header y .header-content) --- */
-.site-header {
-  background-color: white;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ccc;
-}
-
-.header-content {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-.nav-list {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  margin: 0;
-  padding: 0;
-}
-
-.nav-list a {
-  text-decoration: none;
-  color: black;
-  font-weight: bold;
-}
-
-/* --- FOOTER TIPOGRAFÍA ESCALONADA --- */
-.footer-line1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.footer-line2 {
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
-
-.footer-line3 {
-  font-size: 1.2rem;
-  font-weight: 500;
-  text-decoration: none;
-  color: black;
-}
-
-/* --- RESPONSIVE --- */
-@media (max-width: 768px) {
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  nav ul {
-    gap: 1rem;
-  }
-
-  nav ul li a {
-    font-size: 0.9rem;
-  }
-
-  main {
-    margin: 1rem;
-  }
-
-  .banner {
-    height: 60vh;
-  }
-}
-
-@media (max-width: 480px) {
-  header h1 {
-    font-size: 1.2rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 0.7rem;
-  }
-
-  main {
-    margin: 0.5rem;
-  }
-
-  .banner {
-    height: 40vh;
-  }
 }
