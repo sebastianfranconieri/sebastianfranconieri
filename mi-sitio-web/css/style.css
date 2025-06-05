@@ -35,7 +35,7 @@ main {
 footer {
   background-color: white;
   text-align: left;
-  padding: 10px;
+  padding: 0px;
 }
 
 /* Quita márgenes del body para que el BANNER toque los bordes */
