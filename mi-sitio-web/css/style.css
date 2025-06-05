@@ -69,6 +69,11 @@ main {
   box-shadow: none !important;
 }
 
+/* texto about alineado */
+body.about-page main * {
+  text-align: center;
+}
+
 /* Imagen banner horizontal que toca bordes laterales */
 .hero-img {
   width: 100vw;          /* ancho total del viewport */
