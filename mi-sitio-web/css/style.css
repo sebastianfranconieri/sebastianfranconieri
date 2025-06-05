@@ -257,17 +257,18 @@ footer {
 .about-main .vertical-images {
   display: flex;
   justify-content: center;
-  width: 100%;
-  margin: 0;
+  width: calc(100% - 4px); /* full width minus 2px margin on each side */
+  margin: 0 2px;            /* 2px margin left and right */
   padding: 0;
   overflow: hidden;
-  height: 400px;  /* Set the height you want the images to be */
+  height: 600px;            /* bigger height - adjust as needed */
+  box-sizing: border-box;   /* include padding and margin in width */
 }
 
 .about-main .vertical-images img {
   flex: 1 1 auto;
   max-width: 33.3333%;
-  height: 100%;  /* Make images take full container height */
+  height: 100%;            /* fill container height */
   object-fit: cover;
   display: block;
   margin: 0;
