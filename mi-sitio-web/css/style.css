@@ -265,3 +265,24 @@ footer {
   font-weight: bold;
 }
 
+/* Primera línea: grande, negrita fuerte */
+.footer-line1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Segunda línea: normal */
+.footer-line2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* Tercera línea: más grande que la segunda, negrita fina */
+.footer-line3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
