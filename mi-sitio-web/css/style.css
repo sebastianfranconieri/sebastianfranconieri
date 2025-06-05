@@ -7,7 +7,7 @@ body {
 }
 
 header {
-  background-color: #f4f4f4;
+  background-color: white;
   padding: 20px;
   text-align: center;
 }
@@ -33,7 +33,7 @@ main {
 }
 
 footer {
-  background-color: #f4f4f4;
+  background-color: white;
   text-align: center;
   padding: 10px;
 }
