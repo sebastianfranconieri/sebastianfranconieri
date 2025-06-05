@@ -56,21 +56,22 @@ nav ul li a:hover {
 
 /* Main */
 main {
-  max-width: 960px;
-  margin: 2rem auto;
+  width: 100vw;          /* ocupa todo el ancho de la ventana */
+  margin: 0;             /* sin margen para no limitar ancho ni crear scroll */
+  padding: 0;            /* sin padding para que la imagen toque los bordes */
   text-align: center;
-  padding: 0; /* quitar padding para que la imagen toque bordes */
+  overflow: hidden;      /* evita scroll horizontal si algo se desborda */
 }
 
 /* Imagen banner horizontal que toca bordes laterales */
 .hero-img {
-  width: 100vw; /* ancho completo de viewport para tocar bordes */
+  width: 100vw;          /* ancho total del viewport */
   height: auto;
-  max-height: 60vh; /* altura responsiva para que quede horizontal */
-  object-fit: cover; /* recorta sin deformar */
+  max-height: 60vh;      /* altura responsiva para mantener forma horizontal */
+  object-fit: cover;     /* recorta sin deformar */
   display: block;
-  margin-left: calc(-1 * 1rem); /* compensa padding del body */
-  margin-right: calc(-1 * 1rem); /* compensa padding del body */
+  margin-left: calc(-1 * 1rem);  /* compensa padding del body (ajusta si cambias padding body) */
+  margin-right: calc(-1 * 1rem);
 }
 
 /* Footer */
