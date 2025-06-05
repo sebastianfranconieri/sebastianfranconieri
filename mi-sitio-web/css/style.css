@@ -230,8 +230,3 @@ footer {
 .espacio {
   padding: 130px;
 }
-
-/* Espacio de parrafos */
-p {
-  margin-bottom: 0,2px; /* espacio debajo de cada párrafo */
-}
