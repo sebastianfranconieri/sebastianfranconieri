@@ -205,6 +205,10 @@ footer {
   font-family: 'MonumentExtended-Regular', sans-serif;
 }
 
+.mi-texto2 {
+  font-family: 'Avenir', sans-serif;
+}
+
 .negrita {
   text-transform: uppercase;
 }
