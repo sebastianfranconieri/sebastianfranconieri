@@ -78,10 +78,10 @@ main {
 footer {
   background-color: #D3D3D3;
   text-align: left;
-  padding: 2.5rem 1.5rem; /* 2.5rem arriba/abajo para espacio vertical, 1.5rem costados */
+  padding: 0px; /* sin espacios */
   font-size: 0.9rem;
   line-height: 1.5rem; /* altura de línea */
-  margin-top: 3rem;
+  margin-top: 6rem;
   display: flex;
   flex-direction: column;
   justify-content: center; /* centra verticalmente el contenido */
