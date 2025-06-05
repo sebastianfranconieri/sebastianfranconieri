@@ -218,3 +218,7 @@ footer {
   color: black;
   font-weight: bold;
 }
+
+.espacio {
+  padding: 40px;
+}
