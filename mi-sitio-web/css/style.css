@@ -270,3 +270,8 @@ footer {
   padding: 0;
 }
 
+/* Links sin color ni subrrayado */
+a {
+  color: inherit;       /* mantiene el color del texto original */
+  text-decoration: none; /* quita el subrayado */
+}
