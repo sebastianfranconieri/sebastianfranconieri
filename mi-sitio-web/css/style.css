@@ -262,10 +262,9 @@ footer {
 }
 
 .about-main .vertical-images img {
-  flex: 1;
-  height: 100%;
-  width: auto;
-  object-fit: contain;
+  width: 33.3333vw;     /* Cada imagen ocupa 1/3 del ancho total */
+  height: 100vh;        /* Alto igual a la pantalla */
+  object-fit: cover;    /* Rellena el contenedor, puede recortar */
   display: block;
   margin: 0;
   padding: 0;
