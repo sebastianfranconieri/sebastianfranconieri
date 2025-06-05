@@ -58,17 +58,24 @@ nav ul li a:hover {
   color: #0077cc;
 }
 
+/* Main para que la imagen banner toque ambos bordes sin espacio */
 main {
-  width: 100%;           /* ancho al 100% del contenedor padre */
-  max-width: 100%;       /* sin límite máximo */
-  margin: 0;             /* sin márgenes */
-  padding: 0;            /* sin padding */
+  width: 100vw;           /* usar viewport width para cubrir todo el ancho */
+  height: auto;
+  margin: 0;
+  padding: 0;
   text-align: center;
-  overflow: hidden;      /* evita scroll horizontal */
-  margin-top: 0 !important;
-  border: none !important;
-  box-shadow: none !important;
-  box-sizing: border-box; /* incluye padding y border en ancho total */
+  overflow: hidden;       /* evitar scroll horizontal */
+  box-sizing: border-box;
+}
+
+/* Quitar margen y padding del html y body para evitar scroll horizontal */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* evita scroll horizontal por cualquier contenido */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* texto about alineado */
@@ -76,15 +83,15 @@ body.about-page main * {
   text-align: center;
 }
 
-/* Imagen banner horizontal que toca bordes laterales */
+/* Imagen banner para que ocupe el ancho completo, altura automática y sin espacios */
 .hero-img {
-  width: 100vw;          /* ancho total del viewport */
+  width: 100vw;           /* ancho completo de la ventana */
   height: auto;
-  max-height: 60vh;      /* altura responsiva para mantener forma horizontal */
-  object-fit: cover;     /* recorta sin deformar */
+  max-height: 60vh;       /* altura máxima para que quede horizontal y responsive */
+  object-fit: cover;      /* recortar sin deformar */
   display: block;
-  margin-left: calc(-1 * 1rem);  /* compensa padding del body (ajusta si cambias padding body) */
-  margin-right: calc(-1 * 1rem);
+  margin: 0;              /* sin margen */
+  padding: 0;             /* sin padding */
 }
 
 footer {
