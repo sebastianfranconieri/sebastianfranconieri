@@ -231,9 +231,24 @@ footer {
   padding: 130px;
 }
 
+.about-main {
+  max-width: 800px;           /* ancho máximo del contenido */
+  margin: 0 auto;             /* centra el contenido horizontalmente */
+  padding: 2rem 1rem;         /* espacio arriba/abajo y a los lados */
+  text-align: center;         /* centra el texto */
+  box-sizing: border-box;
+}
+
 .about-main p {
-  margin: 0;
-  padding: 0;
+  margin-bottom: 1em;         /* espacio entre párrafos */
+  line-height: 1.6;           /* altura de línea más cómoda */
+}
+
+.about-main h1,
+.about-main h2,
+.about-main h3 {
+  margin-bottom: 0.5em;       /* espacio debajo de los encabezados */
+  margin-top: 1.5em;          /* espacio arriba de los encabezados */
 }
 
 /* Imagenes veritcales About */
