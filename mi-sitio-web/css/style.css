@@ -13,6 +13,7 @@ body {
   background-color: #fff;
   padding: 0px;
   margin: 0;
+  overflow-x: hidden;  /* evitar scroll horizontal global */
 }
 
 /* Header */
@@ -57,16 +58,17 @@ nav ul li a:hover {
   color: #0077cc;
 }
 
-/* Main */
 main {
-  width: 100vw;          /* ocupa todo el ancho de la ventana */
-  margin: 0px;             /* sin margen para no limitar ancho ni crear scroll */
-  padding: 0px;            /* sin padding para que la imagen toque los bordes */
+  width: 100%;           /* ancho al 100% del contenedor padre */
+  max-width: 100%;       /* sin límite máximo */
+  margin: 0;             /* sin márgenes */
+  padding: 0;            /* sin padding */
   text-align: center;
-  overflow: hidden;      /* evita scroll horizontal si algo se desborda */
+  overflow: hidden;      /* evita scroll horizontal */
   margin-top: 0 !important;
   border: none !important;
   box-shadow: none !important;
+  box-sizing: border-box; /* incluye padding y border en ancho total */
 }
 
 /* texto about alineado */
