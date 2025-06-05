@@ -251,19 +251,20 @@ footer {
   margin-top: 1.5em;          /* espacio arriba de los encabezados */
 }
 
-/* Imagenes veritcales About */
+/* Imagenes horizontales About usando clase vertical-images */
 .about-main .vertical-images {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 2rem; /* espacio debajo de las imágenes */
+  flex-direction: row;
+  width: 100vw;            /* ocupa todo el ancho de la ventana */
+  margin: 0;
+  padding: 0;
 }
 
 .about-main .vertical-images img {
-  width: 100%;            /* o fijá un ancho como 600px */
-  max-width: 600px;       /* para que no se pasen de ancho */
+  width: 33.3333vw;        /* cada imagen ocupa un tercio exacto del ancho de la pantalla */
+  height: auto;
   display: block;
   margin: 0;
   padding: 0;
-  border: none;
+  object-fit: cover;
 }
