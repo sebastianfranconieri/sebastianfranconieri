@@ -230,3 +230,34 @@ footer {
   object-fit: cover; /* importante: recorta lo que sobra sin deformar */
   display: block;
 }
+
+/* Contenedor del header */
+.site-header {
+  background-color: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Flex para alinear horizontalmente */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* espacio entre nombre y menú */
+}
+
+/* Quitar viñetas del menú */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* espacio entre enlaces */
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces del menú */
+.nav-list a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
