@@ -229,5 +229,9 @@ footer {
 /* Espacio About Txt */
 .espacio {
   padding: 130px;
-  margin: 0 !important;
+}
+
+.about-main p {
+  margin: 0;
+  padding: 0;
 }
