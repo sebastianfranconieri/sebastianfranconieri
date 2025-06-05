@@ -234,9 +234,11 @@ footer {
 .about-main {
   max-width: 800px;              /* ancho máximo del contenido */
   margin: 0 auto;                /* centra el contenido horizontalmente */
-  padding: 2rem 1rem;            /* espacio arriba/abajo y a los lados */
+  padding: 0;            /* espacio arriba/abajo y a los lados */
   text-align: center;            /* centra el texto */
   box-sizing: border-box;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .about-main p {
@@ -254,21 +256,24 @@ footer {
 /* Imagenes horizontales tipo banner en la sección About */
 .about-main .vertical-images {
   display: flex;
-  width: 100vw;
-  height: 100vh;
+  justify-content: center;  /* centra horizontalmente el contenedor */
+  width: 100%;              /* ocupa todo el ancho del contenedor padre */
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
 .about-main .vertical-images img {
-  width: 33.3333vw;     /* Cada imagen ocupa 1/3 del ancho total */
-  height: 100vh;        /* Alto igual a la pantalla */
-  object-fit: cover;    /* Rellena el contenedor, puede recortar */
+  flex: 1 1 auto;           /* cada imagen crece igual y ocupa 1/3 del contenedor */
+  max-width: 33.3333%;      /* ancho máximo para que no crezca más */
+  height: auto;             /* altura automática para respetar proporción */
+  object-fit: cover;        /* cubre sin deformar */
   display: block;
   margin: 0;
   padding: 0;
 }
+
+
 
 /* Links sin color ni subrrayado */
 a {
