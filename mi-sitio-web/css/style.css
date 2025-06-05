@@ -85,18 +85,17 @@ body.about-page main * {
   margin-right: calc(-1 * 1rem);
 }
 
-/* Footer */
 footer {
   background-color: #D3D3D3;
   text-align: left;
-  padding: 0px; /* sin espacios */
+  padding: 1.5rem 2rem; /* espacio arriba/abajo y a los lados */
   font-size: 0.9rem;
   line-height: 1.5rem; /* altura de línea */
   margin-top: 6rem;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* centra verticalmente el contenido */
-  min-height: calc(1.5rem * 4); /* altura mínima para 4 líneas */
+  justify-content: center; /* centra verticalmente */
+  min-height: calc(1.5rem * 20); /* altura mínima para 10 líneas arriba y 10 abajo */
   box-sizing: border-box;
 }
 
