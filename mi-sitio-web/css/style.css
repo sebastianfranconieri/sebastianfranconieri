@@ -11,7 +11,7 @@ body {
   line-height: 1.6;
   color: #333;
   background-color: #fff;
-  padding: 0 1rem;
+  padding: 0px;
   margin: 0;
 }
 
@@ -57,8 +57,8 @@ nav ul li a:hover {
 /* Main */
 main {
   width: 100vw;          /* ocupa todo el ancho de la ventana */
-  margin: 0;             /* sin margen para no limitar ancho ni crear scroll */
-  padding: 0;            /* sin padding para que la imagen toque los bordes */
+  margin: 0px;             /* sin margen para no limitar ancho ni crear scroll */
+  padding: 0px;            /* sin padding para que la imagen toque los bordes */
   text-align: center;
   overflow: hidden;      /* evita scroll horizontal si algo se desborda */
 }
