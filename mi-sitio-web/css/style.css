@@ -289,7 +289,7 @@ a {
 
 .img-left {
   object-fit: cover;
-  object-position: center bottom; /* centra la imagen dentro del contenedor */
+  object-position: center top; /* centra la imagen dentro del contenedor */
   width: 100%;
   height: 100%;
 }
