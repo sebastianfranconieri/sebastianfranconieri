@@ -300,3 +300,59 @@ a {
   width: 100%;
   height: 100%;
 }
+
+/* YOUTUBE LINKS */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.video-item {
+  position: relative;
+  width: 45%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+}
+
+.video-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+}
+
+.video-item:hover img {
+  opacity: 0.4;
+}
+
+.video-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Responsive: una por fila en móvil */
+@media (max-width: 768px) {
+  .video-item {
+    width: 100%;
+  }
+}
