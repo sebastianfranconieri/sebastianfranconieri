@@ -305,16 +305,20 @@ a {
 .video-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
   justify-content: center;
-  padding: 40px 20px;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .video-item {
   position: relative;
-  width: 45%;
+  width: 45%; /* dos por fila */
+  max-width: 400px;
   overflow: hidden;
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .video-item img {
@@ -322,6 +326,7 @@ a {
   height: auto;
   display: block;
   transition: opacity 0.3s ease;
+  border-radius: 8px;
 }
 
 .video-item .overlay {
@@ -332,7 +337,7 @@ a {
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,6 +345,7 @@ a {
   transition: opacity 0.3s ease;
   text-align: center;
   padding: 1rem;
+  border-radius: 8px;
 }
 
 .video-item:hover img {
@@ -350,7 +356,7 @@ a {
   opacity: 1;
 }
 
-/* Responsive: una por fila en móvil */
+/* Responsive: 1 por fila en móviles */
 @media (max-width: 768px) {
   .video-item {
     width: 100%;
