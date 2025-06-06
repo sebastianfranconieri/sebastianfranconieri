@@ -286,3 +286,17 @@ a {
   color: inherit;
   text-decoration: none;
 }
+
+.img-left {
+  object-fit: cover;
+  object-position: center center; /* centra la imagen dentro del contenedor */
+  width: 100%;
+  height: 100%;
+}
+
+.img-centro {
+  object-fit: cover;
+  object-position: center top; /* centra la imagen dentro del contenedor */
+  width: 100%;
+  height: 100%;
+}
