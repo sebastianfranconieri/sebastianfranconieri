@@ -254,7 +254,7 @@ footer {
 }
 
 /* Imagenes horizontales tipo banner en la sección About */
-.about-main .vertical-images {
+.vertical-images {
   display: flex;
   justify-content: center;
   width: calc(100% - 4px); /* full width minus 2px margin on each side */
@@ -265,7 +265,7 @@ footer {
   box-sizing: border-box;   /* include padding and margin in width */
 }
 
-.about-main .vertical-images img {
+.vertical-images img {
   flex: 1 1 auto;
   max-width: 33.3333%;
   height: 100%;            /* fill container height */
