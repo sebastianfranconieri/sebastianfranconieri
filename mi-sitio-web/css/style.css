@@ -153,12 +153,12 @@ footer {
 /* Fuentes personalizadas */
 @font-face {
   font-family: 'Avenir';
-  src: url('../fonts/Avenir.ttf');
+  src: url('../fonts/Avenir.ttc');
 }
 
 @font-face {
   font-family: 'MonumentExtended-Regular';
-  src: url('../fonts/MonumentExtended-Regular.ttf') format('truetype');
+  src: url('../fonts/MonumentExtended-Regular.otf') format('truetype');
 }
 
 /* Clases de texto */
