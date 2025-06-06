@@ -314,8 +314,8 @@ a {
 
 .video-item {
   position: relative;
-  width: 45%; /* dos por fila */
-  max-width: 400px;
+  width: 48%; /* dos por fila */
+  max-width: 500px;
   overflow: hidden;
   cursor: pointer;
   border-radius: 8px;
