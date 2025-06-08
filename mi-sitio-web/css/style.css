@@ -374,3 +374,7 @@ a {
 section {
   margin-bottom: 2rem; /* or 20px, or whatever space you want */
 }
+
+div {
+  margin-top: 2rem;
+}
