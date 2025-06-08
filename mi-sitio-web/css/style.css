@@ -310,7 +310,9 @@ a {
   padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 2rem;
+  margin-top: 4rem; /* o 40px, ajustá a gusto */
+  position: relative;
+  z-index: 2;
 }
 
 .video-item {
