@@ -362,3 +362,11 @@ a {
     width: 100%;
   }
 }
+
+/* about video web banner */
+.hero-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* importante: evita recorte y mantiene proporción 1920x803 */
+}
