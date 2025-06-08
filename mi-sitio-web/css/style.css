@@ -310,7 +310,7 @@ a {
   padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 6rem; /* o 60px, ajustá a gusto */
+  margin-top: 12rem; /* Aumentá el valor hasta que te guste la separación */
   position: relative;
   z-index: 2;
 }
