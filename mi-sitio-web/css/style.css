@@ -310,7 +310,7 @@ a {
   padding: 20px;
   max-width: 1000px;
   margin: 0 auto;
-  margin-top: 4rem; /* o 40px, ajustá a gusto */
+  margin-top: 6rem; /* o 60px, ajustá a gusto */
   position: relative;
   z-index: 2;
 }
