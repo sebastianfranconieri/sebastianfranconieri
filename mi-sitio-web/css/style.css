@@ -196,10 +196,6 @@ h2 {
   text-transform: uppercase;
 }
 
-h4 {    
-  font-weight: 800;
-}
-
 @keyframes slide {
   from {
     transform: translateX(0);
