@@ -287,6 +287,8 @@ a {
   text-decoration: none;
 }
 
+
+/* CENTRADO DE LAS 3 IMAGENES DEL ABOUT */
 .img-left {
   object-fit: cover;
   object-position: center top; /* centra la imagen dentro del contenedor */
