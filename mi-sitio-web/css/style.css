@@ -233,10 +233,6 @@ h2 {
   background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
 }
 
-.logos:hover .logos-slide {
-  animation-play-state: paused;
-}
-
 .logos-slide {
   display: inline-block;
   animation: 35s slide infinite linear;
