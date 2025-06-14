@@ -212,6 +212,18 @@ footer {
   gap: 30px; /* espacio entre nombre y menú */
 }
 
+.header-content a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 1.5rem; /* Ajusta según diseño */
+  line-height: 1;     /* Asegura que no genere espacio vertical extra */
+}
+
 /* Quitar viñetas del menú */
 .nav-list {
   list-style: none;
