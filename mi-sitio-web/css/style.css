@@ -134,14 +134,12 @@ body {
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 0.5rem
-  margin-left: 20px
 }
 
 .footer-line2 {
   font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
-  margin-left: 20px
 }
 
 .footer-line3 {
@@ -149,7 +147,6 @@ body {
   font-weight: 500;
   text-decoration: none;
   color: black;
-  margin-left: 20px
 }
 
 /* Responsive styles */
