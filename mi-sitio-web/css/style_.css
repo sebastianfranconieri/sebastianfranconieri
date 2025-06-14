@@ -1,0 +1,399 @@
+/* Reset general */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body y tipografía general */
+body {
+  font-family: 'Avenir', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  padding: 0px;
+  margin: 0;
+  overflow-x: hidden;  /* evitar scroll horizontal global */
+}
+
+/* Header */
+header {
+  background-color: white;
+  padding: 20px 1rem;
+  text-align: center;
+  border-bottom: none; /* Quitar línea negra */
+  border: none !important;
+  box-shadow: none !important;
+  justify-content: center;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  justify-content: center;
+}
+
+
+/* Navegación */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+nav ul li a:hover {
+  color: #0077cc;
+}
+
+/* Main para que la imagen banner toque ambos bordes sin espacio */
+main {
+  width: 100vw;           /* usar viewport width para cubrir todo el ancho */
+  height: auto;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;       /* evitar scroll horizontal */
+  box-sizing: border-box;
+}
+
+/* Quitar margen y padding del html y body para evitar scroll horizontal */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* evita scroll horizontal por cualquier contenido */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* texto about alineado */
+body.about-page main * {
+  text-align: center;
+}
+
+/* Imagen banner para que ocupe el ancho completo, altura automática y sin espacios */
+.hero-img {
+  width: 100vw;           /* ancho completo de la ventana */
+  height: auto;
+  max-height: 60vh;       /* altura máxima para que quede horizontal y responsive */
+  object-fit: cover;      /* recortar sin deformar */
+  display: block;
+  margin: 0;              /* sin margen */
+  padding: 0;             /* sin padding */
+}
+
+footer {
+  background-color: #F5F5F5;
+  text-align: left;
+  padding: 1.5rem 2rem; /* espacio arriba/abajo y a los lados */
+  font-size: 0.9rem;
+  line-height: 1.5rem; /* altura de línea */
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centra verticalmente */
+  min-height: calc(1.5rem * 9); /* altura mínima para 10 líneas arriba y 10 abajo */
+  box-sizing: border-box;
+}
+
+/* Media queries para móviles */
+@media (max-width: 768px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  
+  nav ul {
+    gap: 1rem;
+  }
+  
+  nav ul li a {
+    font-size: 0.9rem;
+  }
+  
+  main {
+    margin: 1rem;
+  }
+  
+  .hero-img {
+    max-height: 40vh;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.2rem;
+  }
+  
+  nav ul {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  main {
+    margin: 0.5rem;
+  }
+  
+  .hero-img {
+    max-height: 30vh;
+  }
+}
+
+/* Fuentes personalizadas */
+@font-face {
+  font-family: 'Avenir';
+  src: url('../fonts/Avenir.ttc');
+}
+
+@font-face {
+  font-family: 'MonumentExtended-Regular';
+  src: url('../fonts/MonumentExtended-Regular.otf') format('truetype');
+}
+
+/* Clases de texto */
+.mi-texto {
+  font-family: 'MonumentExtended-Regular', sans-serif;
+}
+
+.mi-texto2 {
+  font-family: 'Avenir', sans-serif;
+}
+
+.negrita {
+  text-transform: uppercase;
+}
+
+/* Primera línea: grande, negrita fuerte */
+.footer-line1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Segunda línea: normal */
+.footer-line2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+/* Tercera línea: más grande que la segunda, negrita fina */
+.footer-line3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-decoration: none;
+  color: black;
+}
+
+/* Contenedor del header */
+.site-header {
+  background-color: white;
+  padding: 30px 30px;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Flex para alinear horizontalmente */
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 30px; /* espacio entre nombre y menú */
+}
+
+.header-content a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.header-content h1 {
+  margin: 0;
+  font-size: 1.5rem; /* Ajusta según diseño */
+  line-height: 1;     /* Asegura que no genere espacio vertical extra */
+}
+
+/* Quitar viñetas del menú */
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* espacio entre enlaces */
+  margin: 0;
+  padding: 0;
+}
+
+/* Enlaces del menú */
+.nav-list a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.about-main {
+  max-width: 800px;              /* ancho máximo del contenido */
+  margin: 0 auto;                /* centra el contenido horizontalmente */
+  padding: 0;            /* espacio arriba/abajo y a los lados */
+  text-align: center;            /* centra el texto */
+  box-sizing: border-box;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.about-main p {
+  margin-bottom: 1rem;           /* espacio entre párrafos */
+  line-height: 1.6;              /* altura de línea cómoda */
+}
+
+.about-main h1,
+.about-main h2,
+.about-main h3 {
+  margin-top: 1.5rem;            /* espacio arriba del título */
+  margin-bottom: 0.5rem;         /* espacio debajo del título */
+}
+
+/* Imagenes horizontales tipo banner en la sección About */
+.vertical-images {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 4px); /* full width minus 2px margin on each side */
+  margin: 0 2px;            /* 2px margin left and right */
+  overflow: hidden;
+  height: 600px;            /* bigger height - adjust as needed */
+  box-sizing: border-box;   /* include padding and margin in width */
+}
+
+.vertical-images img {
+  flex: 1 1 auto;
+  max-width: 33.3333%;
+  height: 100%;            /* fill container height */
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Links sin color ni subrrayado */
+a {
+  color: inherit;       /* mantiene el color del texto original */
+  text-decoration: none; /* quita el subrayado */
+}
+
+.no-style-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* CENTRADO DE LAS 3 IMAGENES DEL ABOUT */
+.img-left {
+  object-fit: cover;
+  object-position: center top; /* centra la imagen dentro del contenedor */
+  width: 100%;
+  height: 100%;
+}
+
+.img-centro {
+  object-fit: cover;
+  object-position: center bottom; /* centra la imagen dentro del contenedor */
+  width: 100%;
+  height: 100%;
+}
+
+/* YOUTUBE LINKS */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+  margin-top: 12rem; /* Aumentá el valor hasta que te guste la separación */
+  position: relative;
+  z-index: 2;
+}
+
+.video-item {
+  position: relative;
+  width: 45%; /* dos por fila */
+  max-width: 500px;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.video-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s ease;
+  border-radius: 8px;
+}
+
+.video-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.video-item:hover img {
+  opacity: 0.4;
+}
+
+.video-item:hover .overlay {
+  opacity: 1;
+}
+
+/* Responsive: 1 por fila en móviles */
+@media (max-width: 768px) {
+  .video-item {
+    width: 100%;
+  }
+}
+
+/* about video web banner */
+.hero-video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain; /* importante: evita recorte y mantiene proporción 1920x803 */
+}
+
+section {
+  margin-bottom: 2rem; /* or 20px, or whatever space you want */
+}
+
+p {
+  padding-bottom: 30px;
+  margin: 0 180px; /* espacio externo alrededor del párrafo */
+}
+
+h2 {
+  text-transform: uppercase;
+  padding-bottom: 30px;
+}

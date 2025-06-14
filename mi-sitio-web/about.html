@@ -3,46 +3,62 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inicio - Sebastian Franconieri</title>
+  <title>About - Sebastian Franconieri</title>
+  <!-- Bootstrap 4 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+  <!-- Custom CSS -->
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-    <header class="site-header">
-    <div class="header-content">
-         <a href="index.html" class="no-style-link">
-      <h1 class="mi-texto negrita">Sebastian Franconieri</h1>
-        </a>
-      <nav>
-        <ul class="nav-list">
-          <li><a href="index.html">Video</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="mailto:hi@sebastianfranconieri.com">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-  <main> 
-        <img src="images/banner2.jpg" alt="Banner principal" class="hero-img" />
-        <p></p>
-    <h2 class="footer-line1 mi-texto">Outdoor Filmmaker and Producer. Based in Chamonix Mont Blanc, France.</h2>
-    <p>Focused on capturing authentic stories from the world’s wildest places, I combine my passion for storytelling with experience in documentary filmmaking, outdoor media production, as well as studio filming and photography. My work embraces everything from rugged mountain landscapes to remote deserts and coastal regions, translating adventure and exploration into powerful visual narratives.</p>
-    <p>I navigate the full production pipeline, from concept development and scriptwriting to directing and post-production. Collaborating closely with athletes, guides, and outdoor brands, bringing their stories to life through a combination of aerial drone cinematography, camera work, and dynamic action filming.</p>
-    <p><strong>Drone Cinematography:</strong> Certified European drone pilot (UAS license) with over 500 hours of flight experience. Skilled at capturing dynamic aerial perspectives using a variety of drones and action scenes. Experienced in flying beyond visual line of sight (BVLOS) with airspace observers and within visual line of sight (VLOS) over controlled, populated areas. Also experienced in filming hyperslapse shots, adding cinematic motion and time compression to aerial sequences.</p>
-    <p><strong>Camera Operation:</strong> Proficient in long-range lenses, low-light filming, and high-action camera to capture rare moments in challenging environments. Stabilized Gimbal Ronin systems to create smooth, cinematic footage. Experienced in capturing timelapse footage, bringing dynamic stories to life as time moves forward.</p>
-    <p>Equipped to operate in any terrain or climate, from icy peaks to sun drenched valleys, I rely on multiple modes of transport including skiing, climbing, cycling, hiking, and 4x4 driving to access remote locations.<br> Certified in wilderness first aid and knowledgeable in maritime safety, I bring both creative and practical skills to every adventure.<br>I am fluent in English, native in Spanish, and conversational in French and Portuguese.</p>
-    <p>For inquiries about collaborations or bookings, please get in touch directly.</p>
-    <a class="footer-line3" href="mailto:hi@sebastianfranconieri.com">hi@sebastianfranconieri.com</a>
-    <p></p>
-      <div class="vertical-images hero-img">
-    <img src="images/climb2.jpg" class="img-left" alt="climb2">
-    <img src="images/drone1.jpg" class="img-centro" alt="drone1">
-    <img src="images/climb1.jpg" alt="climb1">
+  <!-- Header will be loaded by JavaScript -->
+  <div id="header-container"></div>
+  
+  <main class="about-main container-fluid px-0">
+    <img src="images/banner2.jpg" alt="Banner principal" class="hero-img w-100" />
+    
+    <div class="container py-4">
+      <h2 class="footer-line1 mi-texto text-center">Outdoor Filmmaker and Producer. Based in Chamonix Mont Blanc, France.</h2>
+      <p class="text-center mx-md-5">Focused on capturing authentic stories from the world's wildest places, I combine my passion for storytelling with experience in documentary filmmaking, outdoor media production, as well as studio filming and photography. My work embraces everything from rugged mountain landscapes to remote deserts and coastal regions, translating adventure and exploration into powerful visual narratives.</p>
+      <p class="text-center mx-md-5">I navigate the full production pipeline, from concept development and scriptwriting to directing and post-production. Collaborating closely with athletes, guides, and outdoor brands, bringing their stories to life through a combination of aerial drone cinematography, camera work, and dynamic action filming.</p>
+      <p class="text-center mx-md-5"><strong>Drone Cinematography:</strong> Certified European drone pilot (UAS license) with over 500 hours of flight experience. Skilled at capturing dynamic aerial perspectives using a variety of drones and action scenes. Experienced in flying beyond visual line of sight (BVLOS) with airspace observers and within visual line of sight (VLOS) over controlled, populated areas. Also experienced in filming hyperslapse shots, adding cinematic motion and time compression to aerial sequences.</p>
+      <p class="text-center mx-md-5"><strong>Camera Operation:</strong> Proficient in long-range lenses, low-light filming, and high-action camera to capture rare moments in challenging environments. Stabilized Gimbal Ronin systems to create smooth, cinematic footage. Experienced in capturing timelapse footage, bringing dynamic stories to life as time moves forward.</p>
+      <p class="text-center mx-md-5">Equipped to operate in any terrain or climate, from icy peaks to sun drenched valleys, I rely on multiple modes of transport including skiing, climbing, cycling, hiking, and 4x4 driving to access remote locations.<br> Certified in wilderness first aid and knowledgeable in maritime safety, I bring both creative and practical skills to every adventure.<br>I am fluent in English, native in Spanish, and conversational in French and Portuguese.</p>
+      <p class="text-center mx-md-5">For inquiries about collaborations or bookings, please get in touch directly.</p>
+      <div class="text-center">
+        <a class="footer-line3" href="mailto:hi@sebastianfranconieri.com">hi@sebastianfranconieri.com</a>
       </div>
+    </div>
+    
+    <div class="vertical-images d-flex w-100">
+      <img src="images/climb2.jpg" class="img-left flex-grow-1" alt="climb2">
+      <img src="images/drone1.jpg" class="img-centro flex-grow-1" alt="drone1">
+      <img src="images/climb1.jpg" class="flex-grow-1" alt="climb1">
+    </div>
   </main>
-     <footer>
-      <h3 class="mi-texto footer-line1 negrita">Sebastian Franconieri</h3>
-      <h3 class="footer-line2">Filmmaker | Producer</h3>  
-      <a class="footer-line3" href="mailto:hi@sebastianfranconieri.com">hi@sebastianfranconieri.com</a>
-    </footer>
+  
+  <!-- Footer will be loaded by JavaScript -->
+  <div id="footer-container"></div>
+
+  <!-- Bootstrap 4 JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"></script>
+  
+  <!-- Load shared header and footer -->
+  <script>
+    // Load header
+    fetch('header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('header-container').innerHTML = data;
+      });
+    
+    // Load footer
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
