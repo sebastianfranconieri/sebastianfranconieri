@@ -24,6 +24,7 @@ header {
   border-bottom: none; /* Quitar línea negra */
   border: none !important;
   box-shadow: none !important;
+  justify-content: center;
 }
 
 header h1 {
