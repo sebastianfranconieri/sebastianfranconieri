@@ -60,14 +60,10 @@ body {
 .hero-video {
   width: 100%;
   height: auto;
-  max-height: 60vh;
+  height: 80vh;
   object-fit: cover;
 }
 
-/* Video grid styles */
-.video-grid {
-  margin-top: 6rem;
-}
 
 .video-item {
   position: relative;
