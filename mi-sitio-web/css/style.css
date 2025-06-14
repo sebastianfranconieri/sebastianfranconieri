@@ -390,6 +390,7 @@ section {
 
 p {
   padding-bottom: 30px;
+  margin: 80px; /* espacio externo alrededor del párrafo */
 }
 
 h2 {
