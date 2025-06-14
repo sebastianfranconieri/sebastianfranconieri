@@ -226,11 +226,6 @@ footer {
   font-weight: bold;
 }
 
-/* Espacio About Txt */
-.espacio {
-  padding: 3px;
-}
-
 .about-main {
   max-width: 800px;              /* ancho máximo del contenido */
   margin: 0 auto;                /* centra el contenido horizontalmente */
@@ -259,7 +254,6 @@ footer {
   justify-content: center;
   width: calc(100% - 4px); /* full width minus 2px margin on each side */
   margin: 0 2px;            /* 2px margin left and right */
-  padding: 0;
   overflow: hidden;
   height: 600px;            /* bigger height - adjust as needed */
   box-sizing: border-box;   /* include padding and margin in width */
