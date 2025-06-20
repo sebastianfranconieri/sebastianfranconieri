@@ -162,6 +162,10 @@ body {
   .nav-list {
     margin-top: 1rem;
   }
+
+  .nav-list a strong {
+  text-transform: uppercase;
+}
   
   .hero-img, .hero-video {
     max-height: 40vh;
