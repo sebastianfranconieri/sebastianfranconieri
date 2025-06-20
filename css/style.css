@@ -39,6 +39,10 @@ body {
   font-weight: 600;
 }
 
+.nav-list a strong {
+  text-transform: uppercase;
+}
+
 .nav-list a:hover {
   color: #0077cc;
 }
@@ -253,3 +257,4 @@ h2 {
   height: 90px;
   margin: 0 40px;
 }
+
