@@ -168,7 +168,7 @@ body {
 }
   
   .hero-img, .hero-video {
-    max-height: 20vh;
+    max-height: 40vh;
     width: 100%;         
     object-fit: contain;
   }
