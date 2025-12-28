@@ -52,6 +52,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  padding-bottom: 0 !important;
 }
 
 .hero-img {
@@ -97,7 +98,7 @@ body {
   justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
-  padding: 1rem;
+  padding: rem;
   text-align: center;
 }
 
@@ -107,6 +108,17 @@ body {
 
 .video-item:hover .overlay {
   opacity: 1;
+}
+
+.hero-container + .container,
+.container + .container,
+.container + .hero-container {
+  margin-top: 1rem;
+}
+
+.hero-container,
+.container {
+  display: flow-root;
 }
 
 /* About page styles */
