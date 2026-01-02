@@ -175,25 +175,69 @@ body {
   object-position: center bottom;
 }
 
-/* Footer styles */
+/* Footer principal */
+footer.bg-light.py-4 {
+  background-color: #fff;       /* fondo blanco */
+  color: #000;                  /* texto negro */
+  padding: 3rem 2rem;           /* espacio interno */
+  font-family: inherit;         /* mantiene tu tipografía actual */
+  text-align: center;           /* centra contenido, cambia si querés left */
+}
+
+/* Nombre */
 .footer-line1 {
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem
+  margin-bottom: 0.5rem;
+  color: #000;
+  line-height: 1.2;
 }
 
+/* Job / rol */
 .footer-line2 {
   font-size: 1.3rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
+  color: #000;
+  line-height: 1.4;
 }
 
+/* Email / link */
 .footer-line3 {
   font-size: 1.2rem;
   font-weight: 500;
   text-decoration: none;
-  color: black;
+  color: #000 !important;      /* fuerza que sea negro siempre */
+  display: inline-block;
+  position: relative;           /* necesario para la línea */
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
+
+/* Línea animada debajo del email */
+.footer-line3::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;                 /* separación entre texto y línea */
+  width: 60%;                   /* más corta que el texto */
+  height: 2px;                  /* grosor de la línea */
+  background-color: #000;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover en email: zoom y línea */
+.footer-line3:hover {
+  transform: scale(1.05);       /* crece ligeramente */
+  color: #000 !important;       /* sigue negro */
+}
+
+.footer-line3:hover::after {
+  transform: translateX(-50%) scaleX(1);  /* línea aparece */
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -228,6 +272,24 @@ body {
     width: 100%;
     height: 300px;
   }
+
+    footer.bg-light.py-4 {
+    text-align: center;       /* centrar todo en pantallas medianas */
+    padding: 2rem 1.5rem;     /* reducir padding para móviles */
+  }
+
+  .footer-line1 {
+    font-size: 1.6rem;        /* reducir tamaño del nombre */
+  }
+
+  .footer-line2 {
+    font-size: 1.1rem;        /* reducir tamaño del rol */
+  }
+
+  .footer-line3 {
+    font-size: 1rem;          /* tamaño más legible para email */
+    margin-top: 0.5rem;       /* separación del resto del contenido */
+  }
 }
 
 @media (max-width: 576px) {
@@ -235,12 +297,20 @@ body {
     max-height: 30vh;
   }
   
+  footer.bg-light.py-4 {
+    padding: 1.5rem 1rem;     /* más compacta aún */
+  }
+
   .footer-line1 {
     font-size: 1.2rem;
   }
-  
-  .footer-line3 {
+
+  .footer-line2 {
     font-size: 1rem;
+  }
+
+  .footer-line3 {
+    font-size: 0.95rem;
   }
 
   .video-item {
