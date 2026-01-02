@@ -47,6 +47,35 @@ body {
   color: #0077cc;
 }
 
+.nav-list a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Línea */
+.nav-list a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;          /* espacio entre texto y línea */
+  width: 60%;            /* más corta que la palabra */
+  height: 2.5px;         /* grosor elegante */
+  background-color: #000;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* Hover */
+.nav-list a:hover {
+  color: #000;
+}
+
+.nav-list a:hover::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
 /* Hero styles */
 .hero-container {
   width: 100%;
