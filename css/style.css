@@ -83,6 +83,7 @@ body {
   display: block;
   transition: opacity 0.3s ease;
   border-radius: 8px;
+  transition: opacity 0.3s ease, transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .video-item .overlay {
@@ -103,7 +104,7 @@ body {
 }
 
 .video-item:hover img {
-  opacity: 0.4;
+  transform: scale(1.04);
 }
 
 .video-item:hover .overlay {
