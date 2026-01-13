@@ -378,3 +378,10 @@ h2 {
   margin: 0 40px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+#video {
+  scroll-margin-top: 90px; /* header height */
+}

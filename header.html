@@ -5,10 +5,36 @@
     </a>
     <nav>
       <ul class="nav-list list-unstyled d-flex mb-0">
-        <li class="mx-2 mx-md-3"><a href="/#video">Video</a></li>
+        <li class="mx-2 mx-md-3">
+  <a href="/#video" class="nav-video">Video</a>
+</li>
         <li class="mx-2 mx-md-3"><a href="/about/">About</a></li>
         <li class="mx-2 mx-md-3"><a href="mailto:hi@sebastianfranconieri.com">Contact</a></li>
       </ul>
     </nav>
   </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const isHome =
+      window.location.pathname === '/' ||
+      window.location.pathname === '/index.html';
+
+    if (!isHome) return;
+
+    const videoLink = document.querySelector('.nav-video');
+    const videoSection = document.querySelector('#video');
+
+    if (!videoLink || !videoSection) return;
+
+    videoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      videoSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    });
+  });
+</script>
 </header>
