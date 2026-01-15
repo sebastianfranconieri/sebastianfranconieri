@@ -378,10 +378,15 @@ h2 {
   margin: 0 40px;
 }
 
+/* ===============================
+   SMOOTH SCROLL (solo fallback)
+=============================== */
 html {
   scroll-behavior: smooth;
 }
 
+/* Offset para header fijo */
 #video {
-  scroll-margin-top: 90px; /* header height */
+  scroll-margin-top: 90px;
 }
+
