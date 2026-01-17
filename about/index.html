@@ -69,6 +69,44 @@
       });
   </script>
  
+ <script>
+  // FADE OUT + SCROLL SMOOTH
+  document.addEventListener('click', function (e) {
+    const link = e.target.closest('a');
+    if (!link) return;
+
+    const href = link.getAttribute('href');
+    if (!href) return;
+
+    // ignorar mail, target="_blank" y externos
+    if (
+      href.startsWith('mailto:') ||
+      link.target === '_blank' ||
+      href.startsWith('http')
+    ) return;
+
+    // scroll smooth al video
+    if (href === '/#video' || href === '#video') {
+      const section = document.querySelector('#video');
+      if (section) {
+        e.preventDefault();
+        section.scrollIntoView({ behavior: 'smooth' });
+      }
+      return;
+    }
+
+    // hash en la misma página
+    if (href.startsWith('#')) return;
+
+    // fade out + navegación
+    e.preventDefault();
+    document.body.classList.add('fade-out');
+
+    setTimeout(() => {
+      window.location.href = href;
+    }, 600);
+  });
+</script>
  
 </body>
 </html>
