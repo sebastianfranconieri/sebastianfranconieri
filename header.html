@@ -18,30 +18,5 @@
         </li>
       </ul>
     </nav>
-
   </div>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const isHome =
-        window.location.pathname === '/' ||
-        window.location.pathname === '/index.html';
-
-      if (!isHome) return;
-
-      const videoLink = document.querySelector('.nav-video');
-      const videoSection = document.querySelector('#video');
-
-      if (!videoLink || !videoSection) return;
-
-      videoLink.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        videoSection.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      });
-    });
-  </script>
 </header>

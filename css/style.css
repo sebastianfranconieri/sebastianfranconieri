@@ -390,3 +390,11 @@ html {
   scroll-margin-top: 90px;
 }
 
+ body {
+    opacity: 1;
+     transition: opacity 1s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+
+  body.fade-out {
+    opacity: 0;
+  }
