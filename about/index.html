@@ -107,6 +107,28 @@
     }, 600);
   });
 </script>
+
+<script>
+  // FADE IN BANNERS Selecciona todos los videos con clase .hero-video
+  document.addEventListener('DOMContentLoaded', () => {
+    const videos = document.querySelectorAll('.hero-video');
+
+    videos.forEach(video => {
+      // Inicialmente invisible
+      video.style.opacity = 0;
+      video.style.transition = 'opacity 1.2s cubic-bezier(0.83, 0, 0.17, 1)';
+
+      // Espera a que el video pueda reproducirse
+      video.addEventListener('canplay', function fadeIn() {
+        video.removeEventListener('canplay', fadeIn);
+        // Fade-in solo la primera vez
+        requestAnimationFrame(() => {
+          video.style.opacity = 1;
+        });
+      });
+    });
+  });
+</script>
  
 </body>
 </html>
