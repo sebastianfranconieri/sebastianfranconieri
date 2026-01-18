@@ -292,6 +292,29 @@ footer.bg-light.py-4 {
     font-size: 1rem;          /* tamaño más legible para email */
     margin-top: 0.5rem;       /* separación del resto del contenido */
   }
+
+  .video-item .overlay {
+    position: absolute;       /* encima de la miniatura */
+    top: 0;                   /* pegado arriba */
+    left: 0;
+    width: 100%;              /* ocupa todo el ancho del video */
+    padding: 0.5rem 1rem;     /* espacio alrededor del texto */
+    display: flex !important; 
+    align-items: flex-start;  /* texto arriba */
+    justify-content: flex-start; /* texto a la izquierda */
+    background: rgba(0, 0, 0, 0.5); /* fondo semi-transparente */
+    color: #fff;              /* texto blanco */
+    font-size: 0.9rem;        /* tamaño de texto móvil */
+    line-height: 1.2;
+    opacity: 1 !important;    /* siempre visible */
+    pointer-events: none;     /* no bloquea clicks */
+  }
+
+  /* Opcional: asegurar que la miniatura no cambie tamaño */
+  .video-item img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 @media (max-width: 576px) {
