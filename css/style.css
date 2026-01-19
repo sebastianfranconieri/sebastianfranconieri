@@ -315,6 +315,46 @@ footer.bg-light.py-4 {
     width: 100%;
     height: auto;
   }
+
+  .videos-youtube .container {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+/* Espacio uniforme entre todos los videos */
+.videos-youtube .video-item {
+    margin-bottom: 1rem !important; /* espacio entre videos dentro del mismo container */
+}
+
+/* Forzar mismo espacio entre containers */
+.videos-youtube .container + .container .video-item:first-child {
+    margin-top: 1rem !important; /* mismo valor que margin-bottom */
+}
+
+/* Opcional: quitar margen del último video */
+.videos-youtube .video-item:last-child {
+    margin-bottom: 0 !important;
+  }
+
+   .logos {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 1rem; /* opcional, para separar del contenido anterior */
+    margin-bottom: 1rem; /* opcional, para separar del siguiente contenido */
+  }
+
+  .logos-slide {
+    display: flex;
+    flex-wrap: wrap; /* que los logos se ajusten si hace falta */
+    gap: 0.5rem; /* espacio horizontal y vertical entre logos */
+    justify-content: center; /* centrar logos */
+    align-items: center; /* centrar verticalmente */
+  }
+
+  .logos-slide img {
+    height: 55px !important; /* mantiene el mismo tamaño */
+    width: auto; /* no deformar */
+  }
 }
 
 @media (max-width: 576px) {
