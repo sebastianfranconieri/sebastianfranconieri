@@ -104,7 +104,10 @@ body {
   overflow: hidden;
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: 0 25.6px 57.6px 0 rgb(0 0 0 / 22%), 0 4.8px 14.4px 0 rgb(0 0 0 / 18%);
 }
+
+
 
 .video-item img {
   width: 100%;
