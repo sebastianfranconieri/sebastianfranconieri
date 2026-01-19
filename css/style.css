@@ -195,6 +195,14 @@ footer.bg-light.py-4 {
   line-height: 1.2;
 }
 
+.footer-line1 .footer-location {
+  font-size: 1.5rem !important; /* más pequeño que 2rem */
+  font-weight: 400;           /* opcional: menos negrita */
+  display: block;             /* asegurar que esté en otra línea */
+  line-height: 1.2;
+  margin-top: 0.2rem;         /* opcional, separación */
+}
+
 /* Job / rol */
 .footer-line2 {
   font-size: 1.3rem;
@@ -248,7 +256,10 @@ footer.bg-light.py-4 {
   }
   
   .nav-list {
-    margin-top: 1rem;
+    margin-top: 1.9rem;
+    display: flex;
+    gap: 3.5rem;
+    font-size: 18px;
   }
 
   .nav-list a strong {
@@ -282,6 +293,10 @@ footer.bg-light.py-4 {
 
   .footer-line1 {
     font-size: 1.6rem;        /* reducir tamaño del nombre */
+  }
+
+    .footer-line1 .footer-location {
+    font-size: 1rem !important; /* Chamonix más pequeño */
   }
 
   .footer-line2 {
@@ -355,6 +370,7 @@ footer.bg-light.py-4 {
     height: 55px !important; /* mantiene el mismo tamaño */
     width: auto; /* no deformar */
   }
+
 }
 
 @media (max-width: 576px) {
@@ -368,6 +384,10 @@ footer.bg-light.py-4 {
 
   .footer-line1 {
     font-size: 1.2rem;
+  }
+
+    .footer-line1 .footer-location {
+    font-size: 0.8rem !important;   /* Chamonix más pequeño */
   }
 
   .footer-line2 {
