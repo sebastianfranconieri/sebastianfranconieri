@@ -484,3 +484,154 @@ html {
   body.fade-out {
     opacity: 0;
   }
+
+  ////////CONTACT PAGE///////////
+
+  .contact-section {
+  padding: 5rem 2rem;
+}
+
+.contact-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  gap: 4rem;
+}
+
+/* LEFT */
+.contact-info {
+  flex: 1;
+}
+
+.contact-info h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin: 0.5rem 0;
+}
+
+.contact-info a {
+  color: #000;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* RIGHT */
+.contact-form {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border: 1px solid #000;
+  font-family: inherit;
+}
+
+.contact-form textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.contact-form button {
+  padding: 0.8rem;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.contact-form button:hover {
+  opacity: 0.8;
+}
+
+.left-contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+}
+
+/* Página de contacto full screen */
+.contact-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;           /* altura completa de la ventana */
+  overflow: hidden;        /* sin scroll */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header fijo */
+.contact-page #header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Footer fijo */
+.contact-page #footer-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+/* Contenido centrado verticalmente entre header y footer */
+.contact-page .contact-container {
+  flex: 1;                        /* ocupa el espacio entre header y footer */
+  display: flex;
+  justify-content: space-between;  /* left y right */
+  align-items: center;             /* centrado vertical */
+  padding: 0 5%;
+  box-sizing: border-box;
+  margin-top: 80px;   /* espacio para header */
+  margin-bottom: 60px; /* espacio para footer */
+}
+
+/* Fondo full-screen opcional */
+.contact-page .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('../images/banner2.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact-page .contact-container {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;  /* ajusta para header */
+    margin-bottom: 80px; /* ajusta para footer */
+    padding: 0 2%;
+  }
+}

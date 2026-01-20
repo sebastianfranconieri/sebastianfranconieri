@@ -13,15 +13,77 @@
   <link rel="stylesheet" href="../css/style.css" />
 </head>
 
-<body>
+<body class="contact-page">
   <!-- Header will be loaded by JavaScript -->
   <div id="header-container"></div>
   
   
-  <main class="about-main container-fluid px-0">
-    <h2 class="footer-line1 mi-texto text-center mb-4">Contact</h2>
-    
+  <main class="pt-1 pb-5">
 
+<section class="hero-container pb-4">
+  <div class="background-image"></div>
+
+    <div class="contact-section contact-container pt-5">
+
+    <!-- LEFT INFO -->
+    <div class=" left-contact contact-info justify-content-center">
+      <h2 class="footer-line1 mi-texto mb-4">Contact</h2>
+
+      <p>
+         <a class="footer-line3" href="mailto:hi@sebastianfranconieri.com">hi@sebastianfranconieri.com</a>
+      </p>
+
+      <p>
+        <a class="mi-texto negrita" href="https://wa.me/33750570423" target="_blank">
+          +33 7 50 57 04 23
+        </a>
+      </p>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <form
+      class="contact-form"
+      action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+      method="POST"
+    >
+
+      <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+      >
+
+      <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+      >
+
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Phone (optional)"
+      >
+
+      <textarea
+        name="message"
+        placeholder="Message"
+        required
+      ></textarea>
+
+      <!-- Mensaje de respuesta de Formspree -->
+      <input type="hidden" name="_subject" value="New contact from website">
+
+      <!-- Página de thank you (opcional más adelante) -->
+      <!-- <input type="hidden" name="_redirect" value="thank-you.html"> -->
+
+      <button type="submit">Send</button>
+
+      </form>
+      </div>
+    </section>
   </main>
   
   <!-- Footer will be loaded by JavaScript -->
