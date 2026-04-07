@@ -30,9 +30,9 @@ html, body {
     user-select: none;         /* Standard syntax */
 }
 
-h1, h2, .nav-logo, .btn-get-touch, .hash, .num, .eyebrow { font-family: 'Monument'; text-transform: uppercase; letter-spacing: 0.2em;}
+h1, h2, .nav-logo, .btn-get-touch, .hash, .num, .eyebrow { font-family: 'Monument', sans-serif !important; text-transform: uppercase; letter-spacing: 0.2em;}
 
-h3 { font-family: 'Monument';  font-size: 0.8em ; text-transform: uppercase; letter-spacing: 0.2em;}
+h3 { font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-transform: uppercase; letter-spacing: 0.2em;}
 
 /* --- EFECTO GLOW 3D CINEMÁTICO --- */
 .glow-main {
