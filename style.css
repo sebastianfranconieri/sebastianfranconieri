@@ -1,0 +1,896 @@
+/* FUENTES SOLICITADAS */
+@font-face { font-family: 'Monument'; src: url('fonts/monumentextended-regular.otf'); font-display: swap; }
+@font-face { font-family: 'Avenir'; src: url('fonts/avenir.tcc'); font-display: swap; }
+
+:root {
+    --orange: #ff5e00;
+    --black: #0d0d0d;
+    --white: #ffffff;
+    --text-on-img: #ffffff; /* Color de texto cuando está sobre la imagen */
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+
+body { background: #fafafa; font-family: 'Avenir', sans-serif; color: var(--black); overflow-x: hidden;}
+
+html, body {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none;      /* IE 10 and older */
+    user-select: none;         /* Standard syntax */
+}
+
+h1, h2, .nav-logo, .btn-get-touch, .hash, .num, .eyebrow { font-family: 'Monument'; text-transform: uppercase; letter-spacing: 0.2em;}
+
+h3 { font-family: 'Monument';  font-size: 0.8em ; text-transform: uppercase; letter-spacing: 0.2em;}
+
+/* --- EFECTO GLOW 3D CINEMÁTICO --- */
+.glow-main {
+    position: relative;
+    color: #ffffff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* TÉCNICA DE PROFUNDIDAD:
+       1. Sombra de corte (Negra): Separa físicamente la letra del video.
+       2. Núcleo de luz (Blanco): Da nitidez.
+       3. Halo cinemático (Difuminado): Crea la atmósfera. */
+    text-shadow: 
+        /* Capa de contraste (El "3D"): Una sombra oscura muy fina */
+        2px 2px 4px rgba(0, 0, 0, 0.3),
+        
+        /* Capas de Luz (Glow) */
+        0 0 10px rgba(255, 255, 255, 0.1), 
+        0 0 25px rgba(255, 255, 255, 0.15),
+        0 0 50px rgba(255, 255, 255, 0.1);
+
+    /* Añadimos una transformación sutil para mejorar la sensación 3D */
+    transform: translateZ(0); 
+    letter-spacing: 0.03em; /* Un poco más de aire ayuda a la legibilidad sobre video */
+    filter: blur(0.15px);
+    
+    will-change: text-shadow, transform;
+
+    -webkit-backdrop-filter: blur(0.15px); 
+    backdrop-filter: blur(0.15px);
+}
+
+/* --- AJUSTE PARA EL TEXTO NARANJA (PROFUNDIDAD EXTRA) --- */
+.glow-main span, 
+.glow-main .orange {
+    color: #ff5e00;
+    text-shadow: 
+        /* Sombra de contraste para el naranja */
+        2px 2px 5px rgba(0, 0, 0, 0.2),
+        
+        /* Brillo naranja cinemático */
+        0 0 12px rgba(255, 94, 0, 0.1),
+        0 0 30px rgba(255, 94, 0, 0.1),
+        0 0 55px rgba(255, 94, 0, 0.15);
+}
+
+
+/* Forzar h2 en una sola línea */
+.hero-desc h2 {
+    font-family: 'Monument';
+    text-transform: uppercase;
+    letter-spacing: 0.01em;
+    white-space: nowrap; /* Evita que las palabras bajen a la siguiente línea */
+    font-size: clamp(1.2rem, 4vw, 2rem); /* Ajusta según el tamaño de tu H1 */
+    margin-bottom: 10px;
+}
+
+/* Ajustar los párrafos para que tengan la misma fuente pero más pequeña */
+.hero-desc .desc-bottom {
+    font-family: 'Monument';
+    text-transform: uppercase;
+    letter-spacing: -0.01em; /* Un poco menos de tracking para legibilidad en pequeño */
+    font-size: 1em; /* Esto lo hace proporcionalmente más pequeño que el h2 */
+    opacity: 0.7; /* Le da ese toque "dimmed" de Folioblox */
+    white-space: nowrap;
+    margin: 2px 0;
+}
+
+/* Contenedor opcional para agrupar los p */
+.desc-group {
+    display: flex;
+    flex-direction: column; /* O "row" con gap si los quieres uno al lado del otro */
+}
+
+/* Responsivo: Si en móvil es demasiado largo, reducimos el tamaño */
+@media (max-width: 768px) {
+    .hero-desc h2 {
+        font-size: 1.2rem; /* Tamaño móvil para que no se corte */
+    }
+}
+
+/* --- NAVEGACIÓN CON INVERSIÓN DE COLOR (SCROLL) --- */
+.framer-nav { position: fixed; top: 0; width: 100%; padding: 30px 50px; z-index: 1000; mix-blend-mode: difference; }
+.nav-inner { display: flex; justify-content: space-between; align-items: center; }
+.nav-logo { color: #ffffff; text-decoration: none; font-size: 30px; font-family: 'Monument'; text-transform: uppercase; }
+
+.btn-get-touch { background: #ffffff; color: #000000; text-decoration: none; padding: 10px 10px 10px 26px; border-radius: 100px; display: flex; align-items: center; gap: 12px; font-size: 14px; font-weight: bold; font-family: 'Monument'; text-transform: uppercase; transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1); }
+.btn-get-touch:hover { transform: scale(1.05); }
+.icon-circle { background: #ff5e00; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.icon-circle svg { width: 18px; fill: white; }
+
+/* AJUSTE PARA MÓVIL */
+@media (max-width: 809px) { .framer-nav { padding: 20px; } .nav-logo { font-size: 18px; } }
+
+/* --- HERO FULLSCREEN (La parte importante) --- */
+.hero-fullscreen {
+    position: relative;
+    width: 100vw;
+    height: 100vh; /* Ocupa toda la altura de la pantalla */
+    overflow: hidden;
+}
+
+/* Capa 1: Imagen de fondo fija */
+.hero-bg-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
+}
+.hero-bg-image img {
+    width: 100%; height: 100%;
+    object-fit: cover; /* Asegura que la imagen no se deforme */
+    object-position: center;
+}
+/* Overlay oscuro opcional para que el texto blanco se lea mejor */
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.2); /* 20% de negro */
+    z-index: 2;
+}
+
+/* Capa 2: Contenido de texto superpuesto */
+.hero-content-wrapper {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 3; /* Por encima de la imagen y el overlay */
+    display: flex;
+    align-items: center; /* Centrado vertical del bloque de texto */
+    padding: 0 10%; /* Margen lateral */
+    color: var(--text-on-img); /* Texto blanco por defecto */
+}
+
+.hero-text-content {
+    max-width: 800px; /* Ancho máximo del texto */
+    margin-top: 80px; /* Espacio para la Nav Bar fija */
+}
+
+.eyebrow { color: var(--orange); font-size: 20px; margin-bottom: 20px; }
+.main-title { font-size: clamp(30px, 8vw, 90px); white-space: nowrap; line-height: 0.85; margin-bottom: 50px; letter-spacing: 0.02em;}
+.hero-desc { margin-bottom: 50px; max-width: 500px; }
+.desc-top { font-size: 28px; font-weight: 800; margin-bottom: 15px; }
+.desc-bottom { font-size: 20px; opacity: 0.8; }
+
+.services-list { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; max-width: 600px;}
+.service-item { font-size: 16px; display: flex; align-items: center; }
+.hash { color: var(--orange); margin-right: 5px; }
+.num { margin-right: 12px; }
+
+/* --- SECCIÓN LOGOS CENTRADOS (FILAS DE 5) --- */
+.marquee-wrapper { padding: 100px 0; background: #fafafa; width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; overflow: hidden; }
+.marquee-label { text-align: center; font-size: 11px; opacity: 0.4; margin-bottom: 50px; text-transform: uppercase; font-family: 'Monument'; letter-spacing: 0.15em; width: 100%; }
+.marquee-content { display: grid; grid-template-columns: repeat(6, 1fr); gap: 60px 40px; width: 90%; max-width: 1100px; margin: 0 auto; justify-items: center; align-items: center; }
+.marquee-content img { height: auto; max-height: 50px; max-width: 130px; object-fit: contain; filter: grayscale(1); opacity: 0.3; transition: opacity 0.3s ease; display: block; }
+.marquee-content img:hover { opacity: 0.8; }
+
+/* AJUSTE RESPONSIVO PARA MÓVIL */
+@media (max-width: 809px) { 
+    .marquee-content { grid-template-columns: repeat(2, 1fr); gap: 40px 20px; width: 85%; } 
+    .marquee-wrapper { padding: 70px 0; }
+}
+
+
+/* --- PROJECTS GRID --- */
+.projects-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 0px; background: #fafafa; width: 100%; box-sizing: border-box; }
+.grid-item { height: 650px; border-radius: 0px; overflow: hidden; position: relative; background: transparent !important; }
+.grid-item.wide { grid-column: span 2; height: 750px; }
+.full-img { width: 100.5% !important; height: 100.5% !important; object-fit: cover !important; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) !important; min-width: 100%; min-height: 100%; display: block; }
+.grid-item:hover .full-img { transform: translate(-50%, -50%) scale(1) !important; }
+
+.contact-section { padding: 120px 30px; background: var(--black); border-radius: 50px 50px 0 0; }
+.contact-card { max-width: 700px; margin: 0 auto; color: white; text-align: center; }
+.contact-card h2 { font-size: 60px; margin-bottom: 50px; letter-spacing: 0.02em;}
+#folio-form input, #folio-form textarea {
+    width: 100%; padding: 25px; margin-bottom: 20px; border-radius: 18px; border: 1px solid #333; background: #1a1a1a; color: white; font-family: 'Avenir'; font-size: 16px;
+}
+#folio-form button { width: 100%; padding: 25px; border-radius: 18px; background: var(--orange); color: white; border: none; font-family: 'Monument'; cursor: pointer; font-size: 16px; transition: 0.3s;}
+#folio-form button:hover { background: white; color: black; }
+
+#form-status { font-size: 14px; text-transform: uppercase; letter-spacing: 2px; animation: fadeIn 0.5s ease forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ANIMATIONS (Reveals on Scroll) */
+.fade-up { opacity: 0; transform: translateY(50px); transition: all 1s cubic-bezier(0.2, 1, 0.3, 1); }
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+
+/* --- HERO CINEMATIC PARALLAX --- */
+.hero-section { position: relative; height: 100vh; overflow: hidden; width: 100%; background: #000; }
+.hero-bg-image { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; overflow: hidden;}
+.hero-bg-image img { width: 100%; height: 120vh; /* Más alta para tener margen */ object-fit: cover; position: absolute; top: 0; left: 0; will-change: transform; transform: scale(1.1); /* Zoom inicial cinemático */ transition: transform 0.1s ease-out; /* Suavizado */ }
+.hero-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 0; }
+
+.hero-video {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Llena la pantalla vertical */
+    display: block !important;
+    background: black; /* Evita parpadeo blanco */
+}
+
+/* PROJECTS VIDEOS GRID */
+
+/* --- PROJECTS GRID LARGE & CENTERED --- */
+.project-grid-section { padding: 30px 0; background: #fafafa; width: 100%; display: flex; justify-content: center; align-items: center; }
+.grid-wrapper { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; width: 94%; max-width: 1600px; margin: 0 auto; }
+.video-item { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 16 / 9; background: #000; width: 100%; }
+.video-item a { display: block; width: 100%; height: 100%; text-decoration: none; position: relative; }
+.video-item img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.6s ease; }
+.video-item .overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); color: #fff; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.4s ease; text-align: center; padding: 20px; font-family: 'Monument', sans-serif; font-size: 15px; text-transform: uppercase; font-weight: bold; line-height: 1.5; pointer-events: none; z-index: 2; }
+.video-item:hover .overlay { opacity: 1; }
+.video-item:hover img { transform: scale(1.05); }
+
+/* --- EFECTO LOGOS SCROLL --- */
+.logos-container {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px); /* Start smaller and lower */
+    filter: blur(2.5px); /* Adds a cinematic lens blur start */
+    transition: 
+        opacity 1.2s cubic-bezier(0.22, 1, 0.36, 1), 
+        transform 1.2s cubic-bezier(0.22, 1, 0.36, 1),
+        filter 1.2s ease;
+    will-change: transform, opacity;
+}
+
+/* This is the state when it enters the screen */
+.logos-container.is-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+}
+
+.marquee-label {
+    transition: opacity 1s ease 0.2s; /* Label comes in with a slight delay */
+}
+
+/* --- CINEMATIC 3D INFINITE SLIDER --- */
+.slider-3d-section { 
+    background: #fafafa; 
+    padding: 10px 0; 
+    overflow: hidden; 
+    perspective: 2500px; 
+    perspective-origin: center;
+    width: 100%; 
+    display: flex; 
+    align-items: center; 
+}
+
+.slider-container { 
+    width: 100vw; 
+    transform-style: preserve-3d; 
+    pointer-events: none; 
+}
+
+.slider-track { 
+    display: flex; 
+    gap: 30px; 
+    width: max-content; 
+    will-change: transform; 
+    transform-style: preserve-3d;
+    pointer-events: auto; 
+    transform: rotateY(-12deg) rotateX(5deg);
+    transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide { 
+    width: 300px; 
+    height: 700px; 
+    flex-shrink: 0; 
+    border-radius: 24px; 
+    overflow: hidden; 
+    position: relative;
+    transform-style: preserve-3d;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.1); 
+    backface-visibility: hidden; 
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.slide img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    pointer-events: none; 
+}
+
+/* --- EFECTO HOVER (Desaceleración controlada por JS) --- */
+.slider-track .slide:hover { 
+    transform: scale(1.05) translateZ(10px);
+    z-index: 10;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+}
+
+/* --- FIX CRÍTICO PARA MÓVIL --- */
+@media (max-width: 768px) {
+   .slider-3d-section {
+        display: block !important;
+        height: 450px !important; /* Altura ajustada para fotos de 280px */
+        overflow: hidden !important; 
+        perspective: 1200px !important;
+        -webkit-perspective: 1200px !important;
+        width: 100% !important;
+        margin-bottom: 30px; /* Espacio con el formulario de contacto */
+    }
+
+    .slider-container {
+        width: 100% !important;
+        height: 100% !important;
+        display: flex !important;
+        align-items: center;
+        transform-style: preserve-3d !important;
+        -webkit-transform-style: preserve-3d !important;
+    }
+
+    .slider-track {
+        display: flex !important;
+        gap: 20px !important;
+        /* QUITAMOS !important PARA QUE EL JS PUEDA MOVERLO */
+        transform: rotateY(-10deg) rotateX(4deg); 
+        -webkit-transform: rotateY(-10deg) rotateX(4deg);
+        width: max-content !important;
+        will-change: transform;
+    }
+
+    .slide {
+        flex: 0 0 160px !important; 
+        height: 280px !important;
+        /* Mantenemos translateZ(0) para que el iPhone use la tarjeta gráfica */
+        transform: translateZ(0);
+        -webkit-transform: translateZ(0);
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    
+}
+
+/* --- ABOUT SECTION --- */
+.about {
+    position: relative !important; /* CRITICO: para que el fondo se quede dentro de la sección */
+    width: 100%;
+    min-height: 1050px; /* Ajusta la altura que desees */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    border-radius: 0px; /* Estilo redondeado de Folioblox */
+    margin: 20px 0;
+    background: #fafafa;
+    overflow: hidden !important;
+}
+
+.about-background {
+    z-index: 0;
+    pointer-events: none; /* Para que no interfiera si quieres hacer clic en el texto */
+}
+
+/* Oscurecemos un poco la imagen para que el texto sea legible */
+.about-background::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4); /* Capa oscura encima de academy.jpg */
+}
+
+.about-content {
+    position: relative;
+    z-index: 1; /* Por encima de la imagen */
+    max-width: 1200px;
+    text-align: center;
+    color: white;
+}
+
+.about-content h1 {
+    padding-bottom: 10px;
+}
+
+
+.about-content h2 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.about-content h3 {
+    font-size: 23px;
+    letter-spacing: 0.2px;
+    line-height: 1.1;
+}
+
+.about-background img {
+    height: 120% !important; /* Más alta que la sección */
+    width: 100% !important;
+    object-fit: cover !important;
+    position: absolute !important;
+    top: -10% !important; /* Centra el exceso de altura */
+    left: 0;
+    will-change: transform; /* Optimiza el movimiento */
+}
+
+/* --- EMAIL CONTACT FOOTER --- */
+/* 1. ESTO ES VITAL: El contenedor padre debe ser relativo */
+.contact-section {
+    position: relative;
+    width: 100%;
+    /* Eliminamos cualquier padding inferior extra que pueda venir de la sección */
+    padding-bottom: 90px !important; 
+}
+
+/* 2. El Wrapper del Email */
+.contact-footer-wrapper {
+    position: absolute; 
+    bottom: 20px;     /* Pegado al fondo de la sección */
+    right: 40px;      /* Pegado a la derecha */
+    left: auto !important; 
+    z-index: 10;
+    line-height: 1;   /* Elimina espacio vertical fantasma */
+}
+
+.cinematic-contact {
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+    color: #ffffff !important; 
+    font-family: 'Monument', sans-serif;
+    font-size: clamp(10px, 1vw, 12px);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    padding-bottom: 16px; /* Ajustado para que la línea esté cerca del texto */
+    position: relative;
+    margin-right: 20px;
+    transition: transform 0.4s ease;
+    white-space: nowrap;
+}
+
+.contact-separator {
+    margin: 0 10px;
+}
+
+/* La Línea animada */
+.cinematic-contact::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;      
+    width: 0%;    
+    height: 1px;
+    background-color: #ffffff;
+    transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.cinematic-contact:hover::after {
+    width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .contact-footer-wrapper {
+        bottom: 15px;
+        right: 20px;
+    }
+}
+
+/* --- RESPONSIVE LOGOS (MOBILE & TABLET) --- */
+
+@media (max-width: 1024px) {
+    .marquee-content {
+        display: flex;
+        flex-wrap: wrap; /* Permite que los logos salten de línea */
+        justify-content: center; /* Centra la última fila */
+        gap: 20px 0; /* Espacio vertical entre filas */
+        max-width: 500px; /* Estrecha el contenedor para forzar el salto */
+        margin: 0 auto;
+    }
+
+    .marquee-content img {
+        /* Ocupan el 25% para que entren 4 por fila */
+        width: 25%; 
+        height: auto;
+        max-height: 80px; /* Controla el tamaño visual */
+        object-fit: contain;
+        padding: 17px;
+        filter: grayscale(100%);
+        opacity: 0.7;
+    }
+}
+
+@media (max-width: 480px) {
+    .marquee-content {
+        max-width: 100%; /* En móviles muy pequeños usa todo el ancho */
+        gap: 10px 0;
+    }
+
+    .marquee-content img {
+        /* Mantenemos el 25% para asegurar las filas de 4 */
+        width: 25%;
+        max-height: 40px;
+        padding: 8px;
+    }
+    
+    .marquee-label {
+        font-size: 12px;
+        margin-bottom: 25px;
+    }
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 1200px) { .grid-wrapper { gap: 30px; width: 90%; } }
+@media (max-width: 1024px) { .grid-wrapper { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .grid-wrapper { grid-template-columns: 1fr; width: 85%; } .project-grid-section { padding: 60px 0; } }
+
+/* RESPONSIVE */
+@media (min-width: 768px) and (max-width: 1199px) { /* Tablet */
+    .hero-content-wrapper { padding: 0 5%; }
+    .main-title { font-size: 80px; }
+    .projects-grid { grid-template-columns: 1fr; gap: 20px; padding: 20px; }
+    .grid-item.wide { grid-column: span 1; height: 500px;}
+    .grid-item { height: 500px; }
+    .mobil-text { display: block; }
+    .about-title.retro {
+        font-size: 70px;
+        margin-bottom: 20px;
+    }
+   
+    .about-text.retro {
+        font-size: 30px;
+        padding: 120px;
+    }
+
+    .about-content {
+        min-height: 1600px; /* Tu altura actual */
+        display: flex;
+        flex-direction: column; /* Alinea los elementos uno debajo del otro */
+        justify-content: center; /* CENTRADO VERTICAL */
+        align-items: center;    /* CENTRADO HORIZONTAL */
+        text-align: center;     /* Asegura que el texto dentro de los bloques esté centrado */
+        width: 100%;
+    }
+
+  .slider-track {
+        display: flex !important;
+        gap: 50px !important; /* Espacio real entre fotos en iPad */
+        width: max-content !important; /* Evita que las fotos se encimen */
+    }
+
+    .slide {
+        flex: 0 0 300px !important; /* Mantiene el tamaño original sin encogerse */
+    }
+}
+@media (max-width: 809px) { /* Phone */
+    .framer-nav { padding: 15px 20px; }
+    
+    /* Logo en dos líneas */
+    .nav-logo { 
+        font-size: 16px; 
+        display: block; 
+        max-width: 100px; /* Esto obliga a Franconieri a bajar */
+        line-height: 1.2;
+    }
+    
+    /* Botón con texto visible */
+    .btn-get-touch { padding: 6px 6px 6px 15px; }
+    .btn-get-touch span { 
+        display: inline-block; /* Cambiado de 'none' a 'inline-block' */
+        font-size: 8px; 
+    }
+    
+    .icon-circle { width: 28px; height: 28px; }
+    .icon-circle svg { width: 14px; }
+
+    .main-title { font-size: 55px; margin-bottom: 30px;}
+    .services-list { grid-template-columns: 1fr; gap: 15px;}
+    .contact-card h2 { font-size: 40px; }
+
+    .hero-content-wrapper {
+        padding: 0 20px; /* Margen de seguridad lateral */
+        justify-content: center; /* Centra horizontalmente */
+        text-align: center; /* Centra todo el texto interior */
+    }
+
+    .hero-text-content {
+        margin-top: 0; /* Quitamos el margen superior excesivo */
+        max-width: 100%; /* Que no intente medir 800px */
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Centra los elementos hijos */
+    }
+
+    /* 2. El Título: Permitir que rompa línea y ajustar tamaño */
+    .main-title {
+        font-size: clamp(35px, 12vw, 40px); /* Tamaño fluido */
+        white-space: normal; /* PERMITIR que el texto baje si no cabe */
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+
+    /* 3. Descripciones: Quitar el bloqueo de línea */
+    .hero-desc h2 { 
+        font-size: 24px;   
+            }
+    .mobil-text {
+        display: block;
+    }
+
+    .hero-desc .desc-bottom {
+        white-space: normal; /* CRÍTICO: Esto evita que se salga de la pantalla */
+        font-size: 16px;
+        max-width: 300px; /* Limitamos ancho para que el párrafo sea estético */
+        margin: 5px auto;
+    }
+
+    .hero-desc {
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .about-title.retro {
+        font-size: 45px;
+        margin-bottom: 20px;
+    }
+   
+    .about-text.retro {
+        font-size: 15px;
+        padding: 15px;
+    }
+
+    .contact-footer-wrapper {
+        position: relative; /* Cambiamos de absolute a relative para que fluya en el centro */
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        margin-top: 40px; /* Espacio después del formulario */
+        padding-bottom: 0px;
+        padding-top: 10px;
+    }
+
+    .cinematic-contact {
+        margin-right: 0; /* Quitamos el margen lateral que tenía en web */
+        font-size: 8.5px; /* Un poco más pequeño para que no rompa línea en pantallas chicas */
+        display: flex;
+        flex-direction: row; /* Mantiene la línea: Contact — Email */
+        gap: 5px;
+        justify-content: center;
+    }
+
+    /* Asegurar que la línea animada también esté centrada */
+    .cinematic-contact::after {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+    }
+
+    .contact-section {
+        padding: 30px 10px; /* Reducimos el padding para móviles */
+    }
+
+    .contact-card h2 {
+        margin-top: 60px;
+    }
+}
+
+    #folio-form textarea {
+    width: 100%;
+    padding: 25px;
+    margin-bottom: 20px;
+    border-radius: 18px;
+    border: 1px solid #333;
+    background: #1a1a1a;
+    color: white;
+    font-family: 'Avenir';
+    font-size: 16px;
+    
+    /* ESTO BLOQUEA EL CAMBIO DE TAMAÑO */
+    resize: none; 
+    
+    /* Opcional: asegura que no se pase de la altura que quieres */
+    overflow: auto; 
+}
+
+    @media (max-width: 1024px) {
+        /* 1. Forzamos que el overlay sea visible siempre */
+        .video-item .overlay {
+            opacity: 1 !important;
+            background: rgba(0, 0, 0, 0.5); /* Un fondo un poco más suave para que se vea la imagen detrás */
+            pointer-events: auto; /* Asegura que se pueda hacer clic en el enlace */
+        }
+
+        /* 2. Opcional: Ajustamos el tamaño del texto para que quepa mejor en pantallas chicas */
+        .video-item .overlay {
+            font-size: 13px;
+            padding: 15px;
+        }
+
+        /* 3. Evitamos que la imagen se mueva o haga zoom en móvil para que no distraiga */
+        .video-item:hover img {
+            transform: none !important;
+        }
+
+        .slider-track {
+        display: flex !important;
+        /* Aumentamos el gap para que respire como en web */
+        gap: 50px !important; 
+        padding: 0 50px;
+        }
+
+        .slide {
+            /* IMPORTANTE: Evita que el slide se encoja para llenar espacio */
+            flex: 0 0 280px !important; 
+            height: 450px !important;
+            /* Asegura que la transformación 3D no colapse el margen */
+            transform: translateZ(0); 
+        }
+    }
+    
+/* --- EFECTO RETRO GLOX FONTS --- */
+/* --- EFECTO RETRO GLOX (SOLUCIÓN MOBILE & WEB) --- */
+.retro {
+    position: relative;
+    font-family: 'Monument', sans-serif;
+    font-weight: 900;
+    font-size: 80px;
+    text-transform: uppercase;
+    color: #f7f7f2 !important;
+    z-index: 1;
+    display: inline-block;
+    line-height: 1;
+    margin: 0;
+    
+    /* Pequeño resplandor interno para que no se pierda el blanco */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    
+    /* ACELERACIÓN DE HARDWARE (Vital para móvil) */
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}
+
+.retro::before,
+.retro::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+    
+    /* MODO DE FUSIÓN COMPATIBLE */
+    mix-blend-mode: screen; 
+    
+    /* Forzamos al móvil a renderizar estas capas por separado */
+    will-change: filter, opacity;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+/* Brillo Rosa (Ajustado para Safari) */
+.retro::before {
+    color: #ff00ff;
+    /* Bajamos el blur a 15px para que Safari lo procese siempre */
+    filter: blur(15px); 
+    -webkit-filter: blur(15px);
+    opacity: 0.8;
+}
+
+/* Brillo Violeta (Ajustado para Safari) */
+.retro::after {
+    color: #6a00ff;
+    /* Bajamos el blur de 45px a 30px (límite estable en móvil) */
+    filter: blur(30px);
+    -webkit-filter: blur(30px);
+    opacity: 0.5;
+    z-index: -2;
+}
+
+/* --- AJUSTES ESPECÍFICOS MÓVIL --- */
+@media (max-width: 1024px) {
+    .retro {
+        /* Mantenemos el tamaño, pero quitamos sombras pesadas */
+        font-size: clamp(40px, 10vw, 60px); 
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.15); /* Muy sutil */
+    }
+    
+    .retro::before {
+        /* Recuperamos el blur alto pero con opacidad BAJA */
+        filter: blur(18px);
+        -webkit-filter: blur(18px);
+        opacity: 0.5; /* Bajamos de 0.9 a 0.5 para que sea sutil */
+    }
+    
+    .retro::after {
+        /* Un aura más amplia y etérea */
+        filter: blur(35px);
+        -webkit-filter: blur(35px);
+        opacity: 0.3; /* Bajamos de 0.6 a 0.3 para evitar manchas de color */
+    }
+    
+    /* Forzamos el modo de fusión para que no se vea opaco */
+    .retro::before, .retro::after {
+        mix-blend-mode: screen !important;
+        transform: translateZ(0);
+    }
+
+}
+
+/* SCROLL SMOOTH */
+/* Esto evita conflictos entre el scroll de Lenis y el del navegador */
+html {
+    scroll-behavior: auto !important;
+}
+
+/* Opcional: Para que el scroll se vea fluido en navegadores basados en Webkit */
+canvas, img, video {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* SOLUCIÓN GLOBAL PARA SAFARI (MAC & IPHONE) */
+@supports (-webkit-hyphens:none) {
+    
+    /* 1. Limpieza radical de filtros para evitar el emborronamiento */
+    .glow-main, 
+    .about-title,
+    .about-section h2, 
+    .about-content p,
+    #about h2,
+    #about p {
+        -webkit-filter: none !important;
+        filter: none !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        -webkit-font-smoothing: antialiased !important;
+    }
+
+    /* 2. "Filmmaker & Producer" y Títulos (Brillo mucho más sutil) */
+    .glow-main,
+    .about-title,
+    #about h2,
+    .about-section h2 {
+        /* Bajamos radios de 8px/15px a 5px/10px para máxima nitidez */
+        text-shadow: 
+            1px 1px 2px rgba(0, 0, 0, 0.4),    
+            0 0 5px rgba(255, 255, 255, 0.08),  
+            0 0 10px rgba(255, 255, 255, 0.04) !important;
+    }
+
+    /* 3. Ajuste para el texto naranja (Menos expansivo) */
+    .glow-main span, 
+    .glow-main .orange,
+    .about-title span,
+    .about-section span {
+        text-shadow: 
+            1px 1px 2px rgba(0, 0, 0, 0.3),
+            0 0 8px rgba(255, 94, 0, 0.12),
+            0 0 15px rgba(255, 94, 0, 0.06) !important;
+    }
+
+    /* 4. Texto largo del About (Cero Glow, máxima legibilidad) */
+    .about-content p,
+    #about p,
+    .about-text,
+    .about-description {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5) !important; 
+        font-weight: 400 !important;
+        -webkit-text-stroke: 0px !important; /* Evita que Safari engrose la letra */
+    }
+
+}
