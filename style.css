@@ -1,8 +1,7 @@
 /* FUENTES SOLICITADAS */
 @font-face { 
     font-family: 'Monument'; 
-    /* Usamos ./ para asegurar que busque en la carpeta correcta desde la raíz */
-    src: url('./fonts/monumentextended-regular.otf') format('opentype'); 
+    src: url('fonts/monumentextended-regular.otf') format('opentype'); 
     font-display: swap; 
     font-weight: normal;
     font-style: normal;
@@ -10,7 +9,7 @@
 
 @font-face { 
     font-family: 'Avenir'; 
-    src: url('./fonts/avenir.tcc'); 
+    src: url('fonts/avenir.tcc'); 
     font-display: swap; 
 }
 
