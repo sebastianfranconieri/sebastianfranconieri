@@ -3,13 +3,17 @@
     font-family: 'Monument'; 
     src: url('fonts/monument.woff2') format('woff2'),
          url('fonts/monument.otf') format('opentype'); 
-    font-display: swap;
+    font-display: block;
 }
 
 @font-face { 
     font-family: 'Avenir'; 
     src: url('fonts/avenir.tcc'); 
-    font-display: swap; 
+    font-display: block; 
+}
+
+.fonts-loaded body {
+    opacity: 1;
 }
 
 :root {

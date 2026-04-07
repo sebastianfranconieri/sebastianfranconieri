@@ -38,7 +38,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-
+// Esperar a que las fuentes se carguen antes de mostrar el contenido
+document.fonts.ready.then(function() {
+  document.documentElement.classList.add('fonts-loaded');
+});
 
 // FX. PARALLAX SCROLL PARA LA HERO
 
