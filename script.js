@@ -191,6 +191,10 @@ window.addEventListener('scroll', function() {
         const video = document.getElementById('hero-video');
         if (!video) return;
 
+        video.muted = true;
+        video.defaultMuted = true;
+        video.setAttribute('webkit-playsinline', 'true');
+
         const isMobile = window.innerWidth < 768; 
         const videoSrc = isMobile ? 'videos/web-banner2-reel.mp4' : 'videos/web-banner2.mp4';
 
