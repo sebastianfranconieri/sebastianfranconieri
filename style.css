@@ -314,7 +314,7 @@ h3 { font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-tr
 
 .contact-section { padding: 120px 30px; background: var(--black); border-radius: 50px 50px 0 0; }
 .contact-card { max-width: 700px; margin: 0 auto; color: white; text-align: center; }
-.contact-card h2 { font-size: 60px; margin-bottom: 50px; letter-spacing: 0.02em;}
+.contact-card h2 { font-size: 50px; margin-bottom: 50px; letter-spacing: 0.02em;}
 #folio-form input, #folio-form textarea {
     width: 100%; padding: 25px; margin-bottom: 20px; border-radius: 18px; border: 1px solid #333; background: #1a1a1a; color: white; font-family: 'Avenir'; font-size: 16px;
 }
@@ -713,7 +713,7 @@ h3 { font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-tr
 
     .main-title { font-size: 55px; margin-bottom: 30px;}
     .services-list { grid-template-columns: 1fr; gap: 15px;}
-    .contact-card h2 { font-size: 40px; }
+    .contact-card h2 { font-size: 30px; }
 
     .hero-content-wrapper {
         padding: 0 20px; /* Margen de seguridad lateral */
