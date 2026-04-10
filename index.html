@@ -34,6 +34,14 @@
 
 <body id="top">
 
+        <div id="preloader">
+        <div class="preloader-content">
+            <h1 class="loading-name">SEBASTIAN<br><span>FRANCONIERI</span></h1>
+        </div>
+    </div>
+
+    <div id="main-contet">
+
     <nav class="framer-nav">
         <div class="nav-inner">
             <a href="#top" class="nav-logo">Sebastian Franconieri</a>
@@ -54,14 +62,12 @@
      <div class="hero-bg-image">
         <video 
             id="hero-video" 
-            autoplay 
             muted 
             loop 
             playsinline 
             webkit-playsinline
-            preload="metadata" 
+            preload="auto" 
             poster="images/academy.jpg" 
-            style="background-size: cover; background-position: center;"
             class="hero-video">
         </video>
         <div class="hero-overlay"></div>
@@ -218,5 +224,7 @@
 
     <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
     <script src="script.js"></script>
+
+    </div>
 </body>
 </html>

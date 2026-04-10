@@ -1,3 +1,72 @@
+function initCinematicLoad() {
+    const video = document.getElementById('hero-video');
+    const preloader = document.getElementById('preloader');
+    const loadingName = document.querySelector('.loading-name');
+    const mainContent = document.getElementById('main-content');
+
+    if (!video || !preloader) return;
+
+    const isMobile = window.innerWidth < 768;
+    const videoSrc = isMobile ? 'videos/web-banner2-reel.mp4' : 'videos/web-banner2.mp4';
+
+    let timerDone = false;
+    let experienceStarted = false;
+
+    // --- FUNCIÓN DE SALIDA ---
+    const runExitSequence = () => {
+        if (experienceStarted) return;
+        experienceStarted = true;
+
+        // 1. Desaparece el nombre primero
+        if (loadingName) loadingName.classList.add('name-faded');
+
+        setTimeout(() => {
+            video.currentTime = 0;
+            video.play().then(() => {
+                preloader.classList.add('preloader-hidden');
+                if (mainContent) mainContent.classList.add('content-visible');
+            }).catch(() => {
+                // Fallback si el navegador bloquea el play
+                preloader.classList.add('preloader-hidden');
+                if (mainContent) mainContent.classList.add('content-visible');
+            });
+        }, 800); 
+    };
+
+    // --- LÓGICA DE TIEMPO Y CARGA ---
+    
+    // Timer obligatorio de 2 segundos
+    setTimeout(() => {
+        timerDone = true;
+        // Si el video ya tiene algo de buffer (readyState 2 o superior), arrancamos
+        if (video.readyState >= 2) {
+            runExitSequence();
+        }
+    }, 2000);
+
+    // Si el video termina de cargar el buffer después de los 2 segundos
+    video.addEventListener('canplay', () => {
+        if (timerDone) {
+            runExitSequence();
+        }
+    });
+
+    // --- INICIAR CARGA ---
+    video.src = videoSrc;
+    video.load();
+    video.muted = true;
+
+    // SEGURIDAD ABSOLUTA: Si pasan 5 segundos y no ha cargado, forzamos la entrada
+    setTimeout(() => {
+        if (!experienceStarted) runExitSequence();
+    }, 5000);
+}
+
+document.addEventListener('DOMContentLoaded', initCinematicLoad);
+
+
+// WEB SITE CODE JS
+
 document.addEventListener('DOMContentLoaded', () => {
     
     // 1. REVELADO DE ELEMENTOS AL HACER SCROLL (Efecto Framer)
@@ -264,3 +333,4 @@ window.addEventListener('scroll', function() {
     e.preventDefault(); // Evita el salto brusco
     lenis.scrollTo(0, { lerp: 0.05 }); // Sube al píxel 0 con suavidad extrema
 });
+
