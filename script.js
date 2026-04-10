@@ -122,47 +122,6 @@ window.addEventListener('scroll', () => {
 });
 
 
-
-// // FX. CRAZY SLIDER
-// const track = document.querySelector('.slider-track');
-
-// // 1. Clonamos el contenido 5 veces para que sea una tira larguísima
-// const originalHTML = track.innerHTML;
-// track.innerHTML = originalHTML + originalHTML;
-
-// let targetSpeed = 0.3; 
-// let currentSpeed = 0.3;
-
-// // 2. Iniciamos el scroll en la mitad del track para que NUNCA haya huecos al cargar
-// let scrollPos = -(track.scrollWidth / 3); 
-
-// function animate() {
-//     currentSpeed += (targetSpeed - currentSpeed) * 0.05;
-//     scrollPos -= currentSpeed;
-
-//     // 3. Reset invisible
-//     const setWidth = track.scrollWidth / 3;
-//     if (Math.abs(scrollPos) >= setWidth * 2) {
-//         scrollPos = -setWidth;
-//     }
-
-//     // Aplicamos la rotación + el movimiento
-//     // Usamos variables para no perder la inclinación 3D
-//     const rotateY = track.matches(':hover') ? -6 : -8; 
-//     const rotateX = track.matches(':hover') ? 1 : 2;  
-    
-//     track.style.transform = `rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateX(${scrollPos}px)`;
-    
-//     requestAnimationFrame(animate);
-// }
-
-// // 4. Interacción suave
-// track.addEventListener('mouseenter', () => { targetSpeed = 0.1; }); // Velocidad casi parado al poner el mouse
-// track.addEventListener('mouseleave', () => { targetSpeed = 0.9; }); // Velocidad normal lenta (antes era 1.5)
-
-// animate();
-
-
 /* --- EFECTO LOGOS SCROLL --- */
 
 document.addEventListener("DOMContentLoaded", function() {
