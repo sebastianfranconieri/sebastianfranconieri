@@ -1,68 +1,61 @@
 function initCinematicLoad() {
-    const video = document.getElementById('hero-video');
+    // 1. Capturamos los elementos
     const preloader = document.getElementById('preloader');
-    const loadingName = document.querySelector('.loading-name');
     const mainContent = document.getElementById('main-content');
+    const loadingName = document.querySelector('.loading-name');
+    const video = document.getElementById('hero-video');
 
-    if (!video || !preloader) return;
+    console.log("Sistema de carga iniciado...");
 
-    const isMobile = window.innerWidth < 768;
-    const videoSrc = isMobile ? 'videos/web-banner2-reel.mp4' : 'videos/web-banner2.mp4';
+    // 2. Función interna para mostrar la web (Blindada)
+    const revealWebsite = () => {
+        console.log("Revelando web...");
+        
+        // Primero desvanecemos el nombre
+        if (loadingName) {
+            loadingName.style.opacity = "0";
+        }
 
-    let timerDone = false;
-    let experienceStarted = false;
-
-    // --- FUNCIÓN DE SALIDA ---
-    const runExitSequence = () => {
-        if (experienceStarted) return;
-        experienceStarted = true;
-
-        // 1. Desaparece el nombre primero
-        if (loadingName) loadingName.classList.add('name-faded');
-
+        // Después de un momento, quitamos el fondo negro y mostramos la web
         setTimeout(() => {
-            video.currentTime = 0;
-            video.play().then(() => {
-                preloader.classList.add('preloader-hidden');
-                if (mainContent) mainContent.classList.add('content-visible');
-            }).catch(() => {
-                // Fallback si el navegador bloquea el play
-                preloader.classList.add('preloader-hidden');
-                if (mainContent) mainContent.classList.add('content-visible');
-            });
-        }, 800); 
+            if (preloader) {
+                preloader.style.opacity = "0";
+                preloader.style.visibility = "hidden";
+            }
+            if (mainContent) {
+                mainContent.style.visibility = "visible";
+                mainContent.style.opacity = "1";
+            }
+            
+            // Intentamos arrancar el video de fondo (si existe)
+            if (video) {
+                video.muted = true;
+                video.play().catch(e => console.log("Video esperando interacción"));
+            }
+        }, 800);
     };
 
-    // --- LÓGICA DE TIEMPO Y CARGA ---
-    
-    // Timer obligatorio de 2 segundos
-    setTimeout(() => {
-        timerDone = true;
-        // Si el video ya tiene algo de buffer (readyState 2 o superior), arrancamos
-        if (video.readyState >= 2) {
-            runExitSequence();
-        }
-    }, 2000);
+    // 3. EL DISPARADOR DE SEGURIDAD (Infalible)
+    // No importa qué pase, a los 3 segundos la web se abre.
+    setTimeout(revealWebsite, 3000);
 
-    // Si el video termina de cargar el buffer después de los 2 segundos
-    video.addEventListener('canplay', () => {
-        if (timerDone) {
-            runExitSequence();
-        }
-    });
-
-    // --- INICIAR CARGA ---
-    video.src = videoSrc;
-    video.load();
-    video.muted = true;
-
-    // SEGURIDAD ABSOLUTA: Si pasan 5 segundos y no ha cargado, forzamos la entrada
-    setTimeout(() => {
-        if (!experienceStarted) runExitSequence();
-    }, 5000);
+    // 4. CARGA DEL VIDEO (Opcional, no bloquea la web)
+    if (video) {
+        const isMobile = window.innerWidth < 768;
+        video.src = isMobile ? 'videos/web-banner2-reel.mp4' : 'videos/web-banner2.mp4';
+        video.load();
+        
+        // Si el video carga antes de los 3s, apuramos un poco la entrada
+        video.onloadeddata = () => {
+            setTimeout(revealWebsite, 2200);
+        };
+    }
 }
 
-document.addEventListener('DOMContentLoaded', initCinematicLoad);
+// Ejecutar cuando la ventana esté totalmente cargada
+window.onload = function() {
+    initCinematicLoad();
+};
 
 
 // WEB SITE CODE JS
