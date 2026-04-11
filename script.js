@@ -1,22 +1,15 @@
 function initCinematicLoad() {
-    // 1. Capturamos los elementos
     const preloader = document.getElementById('preloader');
-    const mainContent = document.getElementById('main-content');
+    const mainContent = document.getElementById('main-content'); // Asegúrate que el ID coincida (en tu HTML pusiste main-contet sin 'n')
     const loadingName = document.querySelector('.loading-name');
     const video = document.getElementById('hero-video');
 
-    console.log("Sistema de carga iniciado...");
+    // Nos aseguramos de que empiece arriba de todo
+    window.scrollTo(0, 0);
 
-    // 2. Función interna para mostrar la web (Blindada)
     const revealWebsite = () => {
-        console.log("Revelando web...");
-        
-        // Primero desvanecemos el nombre
-        if (loadingName) {
-            loadingName.style.opacity = "0";
-        }
+        if (loadingName) loadingName.style.opacity = "0";
 
-        // Después de un momento, quitamos el fondo negro y mostramos la web
         setTimeout(() => {
             if (preloader) {
                 preloader.style.opacity = "0";
@@ -27,7 +20,11 @@ function initCinematicLoad() {
                 mainContent.style.opacity = "1";
             }
             
-            // Intentamos arrancar el video de fondo (si existe)
+            // --- AQUÍ LIBERAMOS EL SCROLL PARA LA WEB PRINCIPAL ---
+            document.documentElement.classList.add('enable-scroll');
+            document.body.classList.add('enable-scroll');
+            // -----------------------------------------------------
+
             if (video) {
                 video.muted = true;
                 video.play().catch(e => console.log("Video esperando interacción"));
@@ -35,28 +32,21 @@ function initCinematicLoad() {
         }, 800);
     };
 
-    // 3. EL DISPARADOR DE SEGURIDAD (Infalible)
-    // No importa qué pase, a los 3 segundos la web se abre.
     setTimeout(revealWebsite, 3000);
 
-    // 4. CARGA DEL VIDEO (Opcional, no bloquea la web)
     if (video) {
         const isMobile = window.innerWidth < 768;
         video.src = isMobile ? 'videos/web-banner2-reel.mp4' : 'videos/web-banner2.mp4';
         video.load();
-        
-        // Si el video carga antes de los 3s, apuramos un poco la entrada
         video.onloadeddata = () => {
             setTimeout(revealWebsite, 2200);
         };
     }
 }
 
-// Ejecutar cuando la ventana esté totalmente cargada
 window.onload = function() {
     initCinematicLoad();
 };
-
 
 // WEB SITE CODE JS
 
