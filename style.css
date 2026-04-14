@@ -183,7 +183,7 @@ h3 { font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-tr
 /* --- AJUSTE PARA EL TEXTO NARANJA (PROFUNDIDAD EXTRA) --- */
 .glow-main span, 
 .glow-main .orange {
-    color: #ff5e00;
+    color: #d15f1b;
     text-shadow: 
         /* Sombra de contraste para el naranja */
         2px 2px 5px rgba(0, 0, 0, 0.2),
@@ -559,12 +559,27 @@ h3 { font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-tr
 
 /* 2. El Wrapper del Email */
 .contact-footer-wrapper {
-    position: absolute; 
-    bottom: 20px;     /* Pegado al fondo de la sección */
-    right: 40px;      /* Pegado a la derecha */
-    left: auto !important; 
-    z-index: 10;
-    line-height: 1;   /* Elimina espacio vertical fantasma */
+    position: absolute;
+    bottom: 20px;
+    left: 40px;
+    right: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* lado izquierdo */
+.footer-left {
+    display: flex;
+    flex-direction: column; /* 👈 esto es la clave */
+    align-items: flex-start;
+    gap: 6px;
+    font-family: 'Monument', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 3px;
 }
 
 .cinematic-contact {
@@ -829,6 +844,55 @@ h3 { font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-tr
     
     /* Opcional: asegura que no se pase de la altura que quieres */
     overflow: auto; 
+    
+}
+@media (max-width: 767px) {
+    .contact-footer-wrapper {
+        position: relative;    /* Cambia de absolute a relative para que actúe como footer */
+        display: flex;
+        flex-direction: column-reverse; /* Email arriba, Nombre abajo */
+        align-items: center;   /* Centra todo horizontalmente */
+        justify-content: center;
+        
+        margin-top: 50px;      /* Separación generosa del formulario */
+        padding-bottom: 40px;  /* Espacio final para que no toque el borde del cel */
+        
+        left: 0;               /* Reseteamos los valores de la versión web */
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        gap: 15px;
+    }
+
+    .footer-left {
+        align-items: center;   /* Centra el texto del copyright */
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Igualamos tamaños y estilos */
+    .footer-left span, 
+    .cinematic-contact .contact-email {
+        font-size: 11px !important;
+        letter-spacing: 0.2em;
+        font-family: 'Monument', sans-serif;
+        text-transform: uppercase;
+        color: #ffffff;
+    }
+
+    .cinematic-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+        gap: 0;
+    }
+
+    /* Limpieza total para el look de footer minimalista */
+    .contact-separator, 
+    .contact-label {
+        display: none;
+    }
 }
 
     @media (max-width: 1024px) {
