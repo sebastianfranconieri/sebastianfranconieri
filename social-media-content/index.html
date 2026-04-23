@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+   <meta charset="UTF-8">
+    <title>Sebastian Franconieri | Social Media Content</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Fondo negro total y reset */
+        body {
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        /* Título pequeño arriba a la izquierda */
+        .brand-title {
+            font-size: 14px;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: #ffffff;
+            opacity: 0.8;
+        }
+
+        /* Configuración de la cuadrícula: 4 columnas */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr); 
+            gap: 15px; /* Espacio entre videos */
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            margin-bottom: 80px;
+        }
+
+        /* Contenedor vertical (proporción 9:16) */
+        .video-item {
+            position: relative;
+            width: 100%;
+            padding-top: 177.77%; /* Relación de aspecto para Reels/TikTok */
+            background-color: #0a0a0a;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        /* Estilo del iframe para que ocupe todo el contenedor */
+        .video-item iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+    .contact-footer-wrapper {
+    /* position: absolute;  <-- ELIMINA ESTO */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px; /* Espaciado interno */
+    margin-top: 50px; /* Espacio respecto a los videos */
+    width: 100%;
+    box-sizing: border-box; /* Para que el padding no rompa el ancho */
+}
+
+        /* lado izquierdo */
+        .footer-left {
+            display: flex;
+            flex-direction: column; /* 👈 esto es la clave */
+            align-items: flex-start;
+            gap: 6px;
+            font-family: 'Monument', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: #ffffff;
+            margin-bottom: 3px;
+        }
+
+        .cinematic-contact {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            color: #ffffff !important; 
+            font-family: 'Monument', sans-serif;
+            font-size: clamp(10px, 1vw, 12px);
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding-bottom: 16px; /* Ajustado para que la línea esté cerca del texto */
+            position: relative;
+            margin-right: 20px;
+            transition: transform 0.4s ease;
+            white-space: nowrap;
+        }
+
+        /* Ajuste para pantallas pequeñas (móviles) */
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
+            }
+        }
+
+        @font-face { 
+        font-family: 'Monument'; 
+        src: url('fonts/monument.woff2') format('woff2'),
+            url('fonts/monument.otf') format('opentype'); 
+        font-display: block;
+        }
+
+        .footer-left, .cinematic-contact, .brand-title{ font-family: 'Monument', sans-serif !important; text-transform: uppercase; letter-spacing: 0.2em;}
+
+        .footer-left, .cinematic-contact, .brand-title{ font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-transform: uppercase; letter-spacing: 0.2em;}
+    </style>
+</head>
+<body>
+
+    <div class="brand-title">Social Media Content</div>
+
+    <main class="video-grid">
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F4191718327769344%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FWatchEpicTV%2Fvideos%2F454450777429489%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+         <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F689869903442862%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+         <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F635890119454038%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+     
+        <div class="video-item">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FWatchEpicTV%2Fvideos%2F1448148849697634%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+          <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F3085547771603208%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F882813781372145%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FWatchEpicTV%2Fvideos%2F1118312483298329%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F649735167846008%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1261952555668592%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </iframe></div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1906788129895279%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F698500683054082%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F1182854179999794%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F654521713709393%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+             <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FWatchEpicTV%2Fvideos%2F818566501031324%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+    </main>
+
+        <section class="contact-footer-wrapper">
+         <div class="footer-left">
+            <span>SEBASTIAN FRANCONIERI © 2026 </span>
+        </div>
+
+        <a href="mailto:hi@sebastianfranconieri.com" class="cinematic-contact">
+            <span class="contact-label">Contact</span>
+            <span class="contact-separator">—</span>
+            <span class="contact-email">hi@sebastianfranconieri.com</span>
+        </a>
+        </section>
+
+</body>
+</html>
