@@ -24,7 +24,8 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin-bottom: 30px;
+            margin-bottom: 0px;
+            margin-left: 30px;
             color: #ffffff;
             opacity: 0.8;
         }
@@ -85,6 +86,30 @@
             margin-bottom: 3px;
         }
 
+        .top-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        width: 100%;
+        }
+
+        .nav-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-family: 'Monument', sans-serif;
+        font-size: 14px;
+        margin-right: 30px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
         .cinematic-contact {
             display: inline-flex;
             align-items: center;
@@ -101,6 +126,26 @@
             white-space: nowrap;
         }
 
+        .contact-separator {
+        margin: 0 10px;
+        }
+
+        .cinematic-contact::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;      
+            width: 0%;    
+            height: 1px;
+            background-color: #ffffff;
+            transition: width 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .cinematic-contact:hover::after {
+            width: 100%;
+        }
+
+
         /* Ajuste para pantallas pequeñas (móviles) */
         @media (max-width: 768px) {
             .video-grid {
@@ -115,14 +160,22 @@
         font-display: block;
         }
 
-        .footer-left, .cinematic-contact, .brand-title{ font-family: 'Monument', sans-serif !important; text-transform: uppercase; letter-spacing: 0.2em;}
+        .footer-left, .cinematic-contact, .brand-title, .nav-link { font-family: 'Monument', sans-serif !important; text-transform: uppercase; letter-spacing: 0.2em;}
 
-        .footer-left, .cinematic-contact, .brand-title{ font-family: 'Monument', sans-serif !important;  font-size: 0.8em ; text-transform: uppercase; letter-spacing: 0.2em;}
-    </style>
+        .footer-left, .cinematic-contact, .brand-title, .nav-link { font-family: 'Monument', sans-serif !important;  font-size: 1em ; text-transform: uppercase; letter-spacing: 0.2em;}
+   
+   
+   </style>
+
 </head>
 <body>
 
-    <div class="brand-title">Social Media Content</div>
+    <header class="top-nav">
+        <div class="brand-title">Social Media Content</div>
+        <nav>
+            <a href="https://www.sebastianfranconieri.com" class="cinematic-contact nav-link">Home</a>
+        </nav>
+    </header>
 
     <main class="video-grid">
 
@@ -164,6 +217,10 @@
 
         <div class="video-item">
             <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F25925244600507813%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+
+        <div class="video-item">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F738441508580744%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
         </div>
 
         <div class="video-item">
@@ -221,9 +278,6 @@
         <div class="video-item">
             <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F649916601498299%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
         </div>
-
-        <div class="video-item">
-            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Freel%2F738441508580744%2F&show_text=false&width=267&t=0" width="267" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
 
     </main>
 
