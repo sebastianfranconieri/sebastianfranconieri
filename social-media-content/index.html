@@ -6,7 +6,6 @@
     <link rel="apple-touch-icon" href="images/logosf.png">
     <meta name="theme-color" content="#0d0d0d">
     <title>Sebastian Franconieri | Social Media Content</title>
-    <link rel="stylesheet" href="style.css">
 
     <style>
         
@@ -18,7 +17,6 @@
             color: #fff;
             margin: 0;
             padding: 20px;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         /* Título pequeño arriba a la izquierda */
@@ -156,26 +154,15 @@
         font-display: swap; /* Changed from 'block' to 'swap' for better loading */
         }
 
-
-        /* Ajuste para pantallas pequeñas (móviles) */
-        @media (max-width: 768px) {
-            .video-grid {
-                grid-template-columns: repeat(2, 1fr); /* 2 columnas en móvil */
-            }
-        }
-
-        @font-face { 
-        font-family: 'Monument'; 
-        src: url('fonts/monument.woff2') format('woff2'),
-            url('fonts/monument.otf') format('opentype'); 
-        font-display: block;
-        }
-
-        .footer-left, .cinematic-contact, .brand-title, .nav-link { font-family: 'Monument', sans-serif !important; text-transform: uppercase; letter-spacing: 0.2em;}
-
         .footer-left, .cinematic-contact, .brand-title, .nav-link { font-family: 'Monument', sans-serif !important;  font-size: 1em ; text-transform: uppercase; letter-spacing: 0.2em;}
    
-   
+        @media (max-width: 768px) {
+            /* 1. Ajuste de la rejilla de videos */
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 10px;
+            }
+        }
    </style>
 
 </head>
