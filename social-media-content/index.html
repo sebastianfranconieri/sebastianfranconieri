@@ -158,11 +158,25 @@
         .footer-left, .cinematic-contact, .brand-title, .nav-link { font-family: 'Monument', sans-serif !important;  font-size: 1em ; text-transform: uppercase; letter-spacing: 0.2em;}
    
         @media (max-width: 768px) {
-            /* 1. Ajuste de la rejilla de videos */
+          body { padding: 10px; }
+            
             .video-grid {
-                grid-template-columns: repeat(2, 1fr); 
-                gap: 10px;
+                grid-template-columns: repeat(5, 1fr); /* SE MANTIENEN LAS 5 */
+                gap: 5px; /* Reducimos espacio para que quepan mejor */
             }
+
+            .brand-title { margin-left: 0; font-size: 10px; }
+            .nav-link { margin-right: 0; font-size: 10px; }
+
+            .contact-footer-wrapper {
+                flex-direction: column; /* Apilar para evitar superposición */
+                gap: 20px;
+                text-align: center;
+                align-items: center;
+            }
+
+            .footer-left { align-items: center; font-size: 9px; }
+            .cinematic-contact {align-items: center; font-size: 9px; }
         }
    </style>
 
